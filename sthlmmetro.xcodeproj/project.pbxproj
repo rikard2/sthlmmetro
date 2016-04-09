@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F36E8161CB8DE8100A468B1 /* MetroDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36E8151CB8DE8100A468B1 /* MetroDrawing.swift */; };
+		2F36E81C1CB8DF3100A468B1 /* RouteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36E81B1CB8DF3100A468B1 /* RouteTableViewController.swift */; };
+		2F36E8281CB8E3D800A468B1 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36E8271CB8E3D800A468B1 /* RouteTableViewCell.swift */; };
 		2FFE78F71CB80AE400D85AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */; };
 		2FFE78F91CB80AE400D85AB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE78F81CB80AE400D85AB8 /* ViewController.swift */; };
 		2FFE78FC1CB80AE400D85AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE78FA1CB80AE400D85AB8 /* Main.storyboard */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F36E8151CB8DE8100A468B1 /* MetroDrawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroDrawing.swift; sourceTree = "<group>"; };
+		2F36E81B1CB8DF3100A468B1 /* RouteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewController.swift; sourceTree = "<group>"; };
+		2F36E8271CB8E3D800A468B1 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
 		2FFE78F31CB80AE400D85AB8 /* sthlmmetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sthlmmetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FFE78F81CB80AE400D85AB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +41,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F36E8251CB8E38900A468B1 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				2F36E8151CB8DE8100A468B1 /* MetroDrawing.swift */,
+			);
+			name = Drawing;
+			sourceTree = "<group>";
+		};
+		2F36E8261CB8E3A300A468B1 /* RouteTableView */ = {
+			isa = PBXGroup;
+			children = (
+				2F36E81B1CB8DF3100A468B1 /* RouteTableViewController.swift */,
+				2F36E8271CB8E3D800A468B1 /* RouteTableViewCell.swift */,
+			);
+			name = RouteTableView;
+			sourceTree = "<group>";
+		};
 		2FFE78EA1CB80AE400D85AB8 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +77,8 @@
 		2FFE78F51CB80AE400D85AB8 /* sthlmmetro */ = {
 			isa = PBXGroup;
 			children = (
+				2F36E8261CB8E3A300A468B1 /* RouteTableView */,
+				2F36E8251CB8E38900A468B1 /* Drawing */,
 				2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */,
 				2FFE78F81CB80AE400D85AB8 /* ViewController.swift */,
 				2FFE78FA1CB80AE400D85AB8 /* Main.storyboard */,
@@ -96,6 +121,7 @@
 				TargetAttributes = {
 					2FFE78F21CB80AE400D85AB8 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = N56B7B56X7;
 					};
 				};
 			};
@@ -135,8 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F36E8281CB8E3D800A468B1 /* RouteTableViewCell.swift in Sources */,
 				2FFE78F91CB80AE400D85AB8 /* ViewController.swift in Sources */,
+				2F36E8161CB8DE8100A468B1 /* MetroDrawing.swift in Sources */,
 				2FFE78F71CB80AE400D85AB8 /* AppDelegate.swift in Sources */,
+				2F36E81C1CB8DF3100A468B1 /* RouteTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,10 +278,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = sthlmmetro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hashbrown.sthlmmetro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -260,10 +292,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = sthlmmetro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hashbrown.sthlmmetro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -286,6 +321,7 @@
 				2FFE79071CB80AE400D85AB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
