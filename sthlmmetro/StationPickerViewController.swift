@@ -16,6 +16,22 @@ class StationPickerViewController: UIViewController {
     
     var stations = [
         ["name": "Blåsut"],
+        ["name": "Odenplan"],
+        ["name": "Blåsut"],
+        ["name": "Odenplan"],
+        ["name": "Blåsut"],
+        ["name": "Odenplan"],
+        ["name": "Blåsut"],
+        ["name": "Odenplan"],
+        ["name": "Blåsut"],
+        ["name": "Odenplan"],
+        ["name": "Blåsut"],
+        ["name": "Odenplan"],
+        ["name": "Blåsut"],
+        ["name": "Odenplan"],
+        ["name": "Blåsut"],
+        ["name": "Odenplan"],
+        ["name": "Blåsut"],
         ["name": "Odenplan"]
     ]
     var stationsJson: JSON = []
@@ -29,8 +45,6 @@ class StationPickerViewController: UIViewController {
         
         stationsJson = JSON(stations)
         
-        let button = UIBarButtonItem(title: "Nästa", style: .Plain, target: self, action: nil)
-        self.navigationItem.rightBarButtonItem = button
     }
 
     override func didReceiveMemoryWarning() {
