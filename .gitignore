@@ -1,8 +1,10 @@
 .DS_Store
 build
 *.xcodeproj/*
+*.xcbkptlist
 !*.xcodeproj/project.pbxproj
 /Pods
+*.xcbkptlist
 *.pbxuser
 !default.pbxuser
 *.mode1v3
