@@ -51,7 +51,7 @@
 			children = (
 				2F36E8151CB8DE8100A468B1 /* MetroDrawing.swift */,
 			);
-			name = Drawing;
+			path = Drawing;
 			sourceTree = "<group>";
 		};
 		2F36E8261CB8E3A300A468B1 /* RouteTableView */ = {
