@@ -13,7 +13,7 @@ class MetroDrawing {
     static var greenLineColor: UIColor = MetroDrawing.colorFromRgb(102, g: 153, b: 51)
     static var blueLineColor: UIColor = MetroDrawing.colorFromRgb(0, g: 153, b: 153)
     static var redLineColor: UIColor = MetroDrawing.colorFromRgb(255, g: 51, b: 102)
-    static var connectingLineColor: UIColor = MetroDrawing.colorFromRgb(200, g: 200, b: 200)
+    static var connectingLineColor: UIColor = MetroDrawing.colorFromRgb(230, g: 230, b: 230)
     static var lineTextColor: UIColor = MetroDrawing.colorFromRgb(0, g: 0, b: 0)
     
     var context: CGContextRef
@@ -31,7 +31,7 @@ class MetroDrawing {
         if (line == "green") {
             return greenLineColor
         } else if (line == "blue") {
-            return redLineColor
+            return blueLineColor
         }
         
         return redLineColor
@@ -39,9 +39,10 @@ class MetroDrawing {
     
     func drawLineText(s: NSString, column: CGFloat, row: CGFloat) {
         
+        let font = UIFont(name: "Helvetica", size: 17)
         let textAttributes: [String: AnyObject] = [
             NSForegroundColorAttributeName : MetroDrawing.lineTextColor,
-            NSFontAttributeName : UIFont.systemFontOfSize(17)
+            NSFontAttributeName : font!
         ]
         
         let x = column * width + 20

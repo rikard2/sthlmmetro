@@ -15,6 +15,7 @@ class RouteTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.preservesSuperviewLayoutMargins = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -25,6 +26,9 @@ class RouteTableViewCell: UITableViewCell {
         return CGFloat(routesJson.count) * 70 + 10
     }
     
+    override func layoutMarginsDidChange() {
+    }
+    
     /*
         Draw the lines.
     */
@@ -32,9 +36,10 @@ class RouteTableViewCell: UITableViewCell {
         let context: CGContextRef = UIGraphicsGetCurrentContext()!
         
         let md: MetroDrawing = MetroDrawing(withContext: context)
-        
-        CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor) // vit bakgrund
-        CGContextFillRect(context, self.bounds)
+        self.frame.origin.x = 15
+        self.frame.size.width = self.bounds.size.width - 30
+        //CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor) // vit bakgrund
+       // CGContextFillRect(context, self.bounds)
         
         for (index, route): (String, JSON) in routesJson {
             let i = NSInteger(index)!
@@ -49,6 +54,7 @@ class RouteTableViewCell: UITableViewCell {
             md.drawStopCircle(color, column: 1, row: CGFloat(i) * 6 + 5)
             
             md.drawLineText(fromStation, column: 1, row: CGFloat(i) * 6 + 1)
+            md.drawLineText("Två minuter (13:37)", column: 18, row: CGFloat(i) * 6 + 1)
             md.drawLineText(toStation, column: 1, row: CGFloat(i) * 6 + 5)
         }
     }
