@@ -54,8 +54,15 @@ class AddRouteViewController: UIViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let myRoute = MyRoute()
+        myRoute.fromStation = "Blåsut"
+        myRoute.toStation = "Karlberg"
+        
+        MyRoutesStore.addRoute(myRoute)
+    }
+    
+    override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
+        
     }
     
 

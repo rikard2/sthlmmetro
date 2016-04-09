@@ -63,7 +63,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="S9k-TZ-n78"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="cI1-tE-yAp">
                             <connections>
-                                <segue destination="R4e-Qe-IWN" kind="show" id="NQr-a0-b3j"/>
+                                <segue destination="gWx-Ll-9il" kind="show" id="lS1-TB-JFD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -135,7 +135,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stationCell" id="d8v-iv-uwm">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d8v-iv-uwm" id="hKi-ce-J5Z">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -213,6 +213,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="zG1-7x-XuD"/>
+        <segue reference="lS1-TB-JFD"/>
         <segue reference="kSy-83-DjI"/>
     </inferredMetricsTieBreakers>
 </document>

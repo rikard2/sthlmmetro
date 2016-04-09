@@ -10,12 +10,14 @@ import UIKit
 import SwiftyJSON
 
 class MyRoutesTableViewController: UITableViewController {
-    var myRoutes: JSON = []
+    var myRoutes: Array<MyRoute> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.myRoutes = MyRoutesStore.GetMyRoutes()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.myRoutes = MyRoutesStore.getMyRoutes()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,8 +35,9 @@ class MyRoutesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("stationCell", forIndexPath: indexPath)
         let text: UILabel = cell.viewWithTag(1) as! UILabel
-        let from = myRoutes[indexPath.row]["From"].stringValue
-        let to = myRoutes[indexPath.row]["To"].stringValue
+        let myRoute = self.myRoutes[indexPath.row]
+        let from = myRoute.fromStation
+        let to = myRoute.toStation
         
         text.text = String(format: "%@ → %@", from, to)
         
