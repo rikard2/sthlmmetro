@@ -101,6 +101,26 @@
 			name = Project;
 			sourceTree = "<group>";
 		};
+		2FC4768E1CB9AA3000E0BDE0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2FC4768F1CB9AA4900E0BDE0 /* Views */,
+				2FC476861CB9A45700E0BDE0 /* Stores */,
+				2F36E8251CB8E38900A468B1 /* Drawing */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		2FC4768F1CB9AA4900E0BDE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2FC4768C1CB9A89100E0BDE0 /* MyRoutes */,
+				2FC4768B1CB9A87F00E0BDE0 /* AddRoute */,
+				2F36E8261CB8E3A300A468B1 /* Route */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		2FFE78EA1CB80AE400D85AB8 = {
 			isa = PBXGroup;
 			children = (
@@ -122,12 +142,8 @@
 		2FFE78F51CB80AE400D85AB8 /* sthlmmetro */ = {
 			isa = PBXGroup;
 			children = (
+				2FC4768E1CB9AA3000E0BDE0 /* App */,
 				2FC4768D1CB9A9BC00E0BDE0 /* Project */,
-				2FC4768C1CB9A89100E0BDE0 /* MyRoutes */,
-				2FC4768B1CB9A87F00E0BDE0 /* AddRoute */,
-				2FC476861CB9A45700E0BDE0 /* Stores */,
-				2F36E8261CB8E3A300A468B1 /* Route */,
-				2F36E8251CB8E38900A468B1 /* Drawing */,
 				2FFE78FA1CB80AE400D85AB8 /* Main.storyboard */,
 				2FFE78FF1CB80AE400D85AB8 /* LaunchScreen.storyboard */,
 			);
