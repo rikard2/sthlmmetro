@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F0B93B81CB97DA6009F1EDF /* StationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B93B71CB97DA6009F1EDF /* StationPickerViewController.swift */; };
+		2F0B93B81CB97DA6009F1EDF /* AddRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B93B71CB97DA6009F1EDF /* AddRouteViewController.swift */; };
 		2F0B93BA1CB99253009F1EDF /* MyRoutesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B93B91CB99253009F1EDF /* MyRoutesTableViewController.swift */; };
 		2F36E8161CB8DE8100A468B1 /* MetroDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36E8151CB8DE8100A468B1 /* MetroDrawing.swift */; };
 		2F36E81C1CB8DF3100A468B1 /* RouteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36E81B1CB8DF3100A468B1 /* RouteTableViewController.swift */; };
@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F0B93B71CB97DA6009F1EDF /* StationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationPickerViewController.swift; sourceTree = "<group>"; };
+		2F0B93B71CB97DA6009F1EDF /* AddRouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRouteViewController.swift; sourceTree = "<group>"; };
 		2F0B93B91CB99253009F1EDF /* MyRoutesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRoutesTableViewController.swift; sourceTree = "<group>"; };
 		2F36E8151CB8DE8100A468B1 /* MetroDrawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroDrawing.swift; sourceTree = "<group>"; };
 		2F36E81B1CB8DF3100A468B1 /* RouteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		2FC4768B1CB9A87F00E0BDE0 /* AddRoute */ = {
 			isa = PBXGroup;
 			children = (
-				2F0B93B71CB97DA6009F1EDF /* StationPickerViewController.swift */,
+				2F0B93B71CB97DA6009F1EDF /* AddRouteViewController.swift */,
 			);
 			path = AddRoute;
 			sourceTree = "<group>";
@@ -296,7 +296,7 @@
 				2F36E8161CB8DE8100A468B1 /* MetroDrawing.swift in Sources */,
 				2FFE78F71CB80AE400D85AB8 /* AppDelegate.swift in Sources */,
 				2F36E81C1CB8DF3100A468B1 /* RouteTableViewController.swift in Sources */,
-				2F0B93B81CB97DA6009F1EDF /* StationPickerViewController.swift in Sources */,
+				2F0B93B81CB97DA6009F1EDF /* AddRouteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

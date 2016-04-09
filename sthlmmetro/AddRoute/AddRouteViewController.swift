@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class StationPickerViewController: UIViewController {
+class AddRouteViewController: UIViewController {
 
     @IBOutlet weak var fromPicker: UIPickerView!
     @IBOutlet weak var toPicker: UIPickerView!
@@ -61,12 +61,12 @@ class StationPickerViewController: UIViewController {
 
 }
 
-extension StationPickerViewController : UIPickerViewDataSource {
-    func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
+extension AddRouteViewController : UIPickerViewDataSource {
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return stationsJson.count
     }
     
@@ -78,7 +78,7 @@ extension StationPickerViewController : UIPickerViewDataSource {
     
 }
 
-extension StationPickerViewController : UIPickerViewDelegate {
+extension AddRouteViewController : UIPickerViewDelegate {
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return stationsJson[row]["name"].stringValue
     }
