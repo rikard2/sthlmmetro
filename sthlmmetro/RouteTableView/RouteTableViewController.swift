@@ -54,6 +54,7 @@ class RouteTableViewController: UITableViewController {
             ]
         ]
     ]
+    
     var routesJson: JSON = []
     
     override func viewDidLoad() {
@@ -62,6 +63,7 @@ class RouteTableViewController: UITableViewController {
         self.tableView.separatorColor = UIColor.clearColor()
         self.tableView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
         self.tableView.separatorInset = UIEdgeInsetsMake(50, 0, 50, 0)
+        self.title = "Blåsut → Kungsträdgården"
     }
 
 

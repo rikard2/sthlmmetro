@@ -1,10 +1,13 @@
 PODS:
+  - LatoFont (1.0.0)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - LatoFont (~> 1.0)
   - SwiftyJSON (~> 2.3)
 
 SPEC CHECKSUMS:
+  LatoFont: bcfb0239c339af9aacf4b3061d5268e53e080732
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0

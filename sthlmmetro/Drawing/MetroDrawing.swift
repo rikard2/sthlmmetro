@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import LatoFont
 
 class MetroDrawing {
     static var greenLineColor: UIColor = MetroDrawing.colorFromRgb(102, g: 153, b: 51)
@@ -39,10 +40,10 @@ class MetroDrawing {
     
     func drawLineText(s: NSString, column: CGFloat, row: CGFloat) {
         
-        let font = UIFont(name: "Helvetica", size: 17)
+        let f = UIFont(name: "HelveticaNeue", size: 17)!
         let textAttributes: [String: AnyObject] = [
             NSForegroundColorAttributeName : MetroDrawing.lineTextColor,
-            NSFontAttributeName : font!
+            NSFontAttributeName : f
         ]
         
         let x = column * width + 20

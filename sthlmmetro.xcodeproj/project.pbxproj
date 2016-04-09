@@ -13,7 +13,6 @@
 		2FFE78F71CB80AE400D85AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */; };
 		2FFE78F91CB80AE400D85AB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE78F81CB80AE400D85AB8 /* ViewController.swift */; };
 		2FFE78FC1CB80AE400D85AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE78FA1CB80AE400D85AB8 /* Main.storyboard */; };
-		2FFE78FE1CB80AE400D85AB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE78FD1CB80AE400D85AB8 /* Assets.xcassets */; };
 		2FFE79011CB80AE400D85AB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE78FF1CB80AE400D85AB8 /* LaunchScreen.storyboard */; };
 		4BECCD853ED5DE111ED7C131 /* Pods_sthlmmetro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB56F23747873E8D43AA929 /* Pods_sthlmmetro.framework */; };
 /* End PBXBuildFile section */
@@ -26,7 +25,6 @@
 		2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FFE78F81CB80AE400D85AB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2FFE78FB1CB80AE400D85AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2FFE78FD1CB80AE400D85AB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FFE79001CB80AE400D85AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FFE79021CB80AE400D85AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		786AD45E797D499E6257D810 /* Pods-sthlmmetro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sthlmmetro.release.xcconfig"; path = "Pods/Target Support Files/Pods-sthlmmetro/Pods-sthlmmetro.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 				2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */,
 				2FFE78F81CB80AE400D85AB8 /* ViewController.swift */,
 				2FFE78FA1CB80AE400D85AB8 /* Main.storyboard */,
-				2FFE78FD1CB80AE400D85AB8 /* Assets.xcassets */,
 				2FFE78FF1CB80AE400D85AB8 /* LaunchScreen.storyboard */,
 				2FFE79021CB80AE400D85AB8 /* Info.plist */,
 			);
@@ -176,7 +173,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FFE79011CB80AE400D85AB8 /* LaunchScreen.storyboard in Resources */,
-				2FFE78FE1CB80AE400D85AB8 /* Assets.xcassets in Resources */,
 				2FFE78FC1CB80AE400D85AB8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
