@@ -7,21 +7,27 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class RouteTableViewCell: UITableViewCell {
 
+    var routesJson: JSON = []
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    func getHeight() -> CGFloat {
+        return CGFloat(routesJson.count) * 70 + 10
+    }
+    
+    /*
+        Draw the lines.
+    */
     override func drawRect(rect: CGRect) {
         let context: CGContextRef = UIGraphicsGetCurrentContext()!
         
@@ -30,18 +36,20 @@ class RouteTableViewCell: UITableViewCell {
         CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor) // vit bakgrund
         CGContextFillRect(context, self.bounds)
         
-        md.drawConnectingLine(1, fromRow: 1, toColumn: 1, toRow: 6)
-        md.drawConnectingLine(1, fromRow: 8, toColumn: 1, toRow: 12)
-        
-        md.drawStopCircle(md.greenLineColor, column: 1, row: 1)
-        md.drawStopCircle(md.greenLineColor, column: 1, row: 6)
-        
-        md.drawLineText("Blåsut", column: 1, row: 1)
-        md.drawLineText("Slussen", column: 1, row: 6)
-        
-        md.drawStopCircle(md.redLineColor, column: 1, row: 8)
-        md.drawStopCircle(md.redLineColor, column: 1, row: 12)
-        md.drawLineText("Slussen", column: 1, row: 8)
-        md.drawLineText("Mariatorget", column: 1, row: 12)
+        for (index, route): (String, JSON) in routesJson {
+            let i = NSInteger(index)!
+            
+            let fromStation = route["from"].stringValue
+            let toStation = route["to"].stringValue
+            
+            let color = MetroDrawing.lineColorFromString(route["line"].stringValue)
+            
+            md.drawConnectingLine(1, fromRow: CGFloat(i) * 6 + 1, toColumn: 1, toRow: CGFloat(i) * 6 + 5)
+            md.drawStopCircle(color, column: 1, row: CGFloat(i) * 6 + 1)
+            md.drawStopCircle(color, column: 1, row: CGFloat(i) * 6 + 5)
+            
+            md.drawLineText(fromStation, column: 1, row: CGFloat(i) * 6 + 1)
+            md.drawLineText(toStation, column: 1, row: CGFloat(i) * 6 + 5)
+        }
     }
 }

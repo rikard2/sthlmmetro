@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class MetroDrawing {
-    var greenLineColor: UIColor = MetroDrawing.colorFromRgb(102, g: 153, b: 51)
-    var blueLineColor: UIColor = MetroDrawing.colorFromRgb(0, g: 153, b: 153)
-    var redLineColor: UIColor = MetroDrawing.colorFromRgb(255, g: 51, b: 102)
-    var connectingLineColor: UIColor = MetroDrawing.colorFromRgb(200, g: 200, b: 200)
-    var lineTextColor: UIColor = MetroDrawing.colorFromRgb(0, g: 0, b: 0)
+    static var greenLineColor: UIColor = MetroDrawing.colorFromRgb(102, g: 153, b: 51)
+    static var blueLineColor: UIColor = MetroDrawing.colorFromRgb(0, g: 153, b: 153)
+    static var redLineColor: UIColor = MetroDrawing.colorFromRgb(255, g: 51, b: 102)
+    static var connectingLineColor: UIColor = MetroDrawing.colorFromRgb(200, g: 200, b: 200)
+    static var lineTextColor: UIColor = MetroDrawing.colorFromRgb(0, g: 0, b: 0)
     
     var context: CGContextRef
     var width: CGFloat = 10.0
@@ -27,10 +27,20 @@ class MetroDrawing {
         return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 0.8)
     }
     
+    static func lineColorFromString(line: NSString) -> UIColor {
+        if (line == "green") {
+            return greenLineColor
+        } else if (line == "blue") {
+            return redLineColor
+        }
+        
+        return redLineColor
+    }
+    
     func drawLineText(s: NSString, column: CGFloat, row: CGFloat) {
         
         let textAttributes: [String: AnyObject] = [
-            NSForegroundColorAttributeName : lineTextColor,
+            NSForegroundColorAttributeName : MetroDrawing.lineTextColor,
             NSFontAttributeName : UIFont.systemFontOfSize(17)
         ]
         
@@ -42,6 +52,7 @@ class MetroDrawing {
         
         s.drawInRect(rect, withAttributes: textAttributes)
     }
+    
     func drawStopCircle(color: UIColor, column: CGFloat, row: CGFloat) -> Void {
         let x: CGFloat = column * width
         let y: CGFloat = row * width
@@ -59,7 +70,7 @@ class MetroDrawing {
     
     func drawConnectingLine(fromColumn: CGFloat, fromRow: CGFloat, toColumn: CGFloat, toRow: CGFloat) {
         CGContextSetLineWidth(context, 10)
-        CGContextSetStrokeColorWithColor(context, connectingLineColor.CGColor)
+        CGContextSetStrokeColorWithColor(context, MetroDrawing.connectingLineColor.CGColor)
         CGContextBeginPath(context)
         CGContextMoveToPoint(context, fromColumn * width + width / 2, fromRow * width + width / 2)
         CGContextAddLineToPoint(context, toColumn  * width + width / 2, toRow * width + width / 2)
