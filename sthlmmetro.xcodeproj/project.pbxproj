@@ -15,7 +15,6 @@
 		2FC476851CB99CE800E0BDE0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2FC476841CB99CE800E0BDE0 /* Settings.bundle */; };
 		2FC4768A1CB9A49300E0BDE0 /* MyRoutesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC476891CB9A49300E0BDE0 /* MyRoutesStore.swift */; };
 		2FFE78F71CB80AE400D85AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */; };
-		2FFE78F91CB80AE400D85AB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE78F81CB80AE400D85AB8 /* ViewController.swift */; };
 		2FFE78FC1CB80AE400D85AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE78FA1CB80AE400D85AB8 /* Main.storyboard */; };
 		2FFE79011CB80AE400D85AB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE78FF1CB80AE400D85AB8 /* LaunchScreen.storyboard */; };
 		4BECCD853ED5DE111ED7C131 /* Pods_sthlmmetro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB56F23747873E8D43AA929 /* Pods_sthlmmetro.framework */; };
@@ -31,7 +30,6 @@
 		2FC476891CB9A49300E0BDE0 /* MyRoutesStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRoutesStore.swift; sourceTree = "<group>"; };
 		2FFE78F31CB80AE400D85AB8 /* sthlmmetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sthlmmetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2FFE78F81CB80AE400D85AB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2FFE78FB1CB80AE400D85AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FFE79001CB80AE400D85AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FFE79021CB80AE400D85AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,13 +58,13 @@
 			path = Drawing;
 			sourceTree = "<group>";
 		};
-		2F36E8261CB8E3A300A468B1 /* RouteTableView */ = {
+		2F36E8261CB8E3A300A468B1 /* Route */ = {
 			isa = PBXGroup;
 			children = (
 				2F36E81B1CB8DF3100A468B1 /* RouteTableViewController.swift */,
 				2F36E8271CB8E3D800A468B1 /* RouteTableViewCell.swift */,
 			);
-			path = RouteTableView;
+			path = Route;
 			sourceTree = "<group>";
 		};
 		2FC476861CB9A45700E0BDE0 /* Stores */ = {
@@ -74,7 +72,23 @@
 			children = (
 				2FC476891CB9A49300E0BDE0 /* MyRoutesStore.swift */,
 			);
-			name = Stores;
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		2FC4768B1CB9A87F00E0BDE0 /* AddRoute */ = {
+			isa = PBXGroup;
+			children = (
+				2F0B93B71CB97DA6009F1EDF /* StationPickerViewController.swift */,
+			);
+			path = AddRoute;
+			sourceTree = "<group>";
+		};
+		2FC4768C1CB9A89100E0BDE0 /* MyRoutes */ = {
+			isa = PBXGroup;
+			children = (
+				2F0B93B91CB99253009F1EDF /* MyRoutesTableViewController.swift */,
+			);
+			path = MyRoutes;
 			sourceTree = "<group>";
 		};
 		2FFE78EA1CB80AE400D85AB8 = {
@@ -98,16 +112,15 @@
 		2FFE78F51CB80AE400D85AB8 /* sthlmmetro */ = {
 			isa = PBXGroup;
 			children = (
+				2FC4768C1CB9A89100E0BDE0 /* MyRoutes */,
+				2FC4768B1CB9A87F00E0BDE0 /* AddRoute */,
 				2FC476861CB9A45700E0BDE0 /* Stores */,
-				2F36E8261CB8E3A300A468B1 /* RouteTableView */,
+				2F36E8261CB8E3A300A468B1 /* Route */,
 				2F36E8251CB8E38900A468B1 /* Drawing */,
 				2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */,
-				2F0B93B71CB97DA6009F1EDF /* StationPickerViewController.swift */,
-				2FFE78F81CB80AE400D85AB8 /* ViewController.swift */,
 				2FFE78FA1CB80AE400D85AB8 /* Main.storyboard */,
 				2FFE78FF1CB80AE400D85AB8 /* LaunchScreen.storyboard */,
 				2FFE79021CB80AE400D85AB8 /* Info.plist */,
-				2F0B93B91CB99253009F1EDF /* MyRoutesTableViewController.swift */,
 				2FC476841CB99CE800E0BDE0 /* Settings.bundle */,
 			);
 			path = sthlmmetro;
@@ -256,7 +269,6 @@
 				2F0B93BA1CB99253009F1EDF /* MyRoutesTableViewController.swift in Sources */,
 				2FC4768A1CB9A49300E0BDE0 /* MyRoutesStore.swift in Sources */,
 				2F36E8281CB8E3D800A468B1 /* RouteTableViewCell.swift in Sources */,
-				2FFE78F91CB80AE400D85AB8 /* ViewController.swift in Sources */,
 				2F36E8161CB8DE8100A468B1 /* MetroDrawing.swift in Sources */,
 				2FFE78F71CB80AE400D85AB8 /* AppDelegate.swift in Sources */,
 				2F36E81C1CB8DF3100A468B1 /* RouteTableViewController.swift in Sources */,
