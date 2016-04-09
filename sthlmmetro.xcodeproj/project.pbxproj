@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F0B93B81CB97DA6009F1EDF /* StationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B93B71CB97DA6009F1EDF /* StationPickerViewController.swift */; };
 		2F36E8161CB8DE8100A468B1 /* MetroDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36E8151CB8DE8100A468B1 /* MetroDrawing.swift */; };
 		2F36E81C1CB8DF3100A468B1 /* RouteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36E81B1CB8DF3100A468B1 /* RouteTableViewController.swift */; };
 		2F36E8281CB8E3D800A468B1 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36E8271CB8E3D800A468B1 /* RouteTableViewCell.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F0B93B71CB97DA6009F1EDF /* StationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationPickerViewController.swift; sourceTree = "<group>"; };
 		2F36E8151CB8DE8100A468B1 /* MetroDrawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroDrawing.swift; sourceTree = "<group>"; };
 		2F36E81B1CB8DF3100A468B1 /* RouteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewController.swift; sourceTree = "<group>"; };
 		2F36E8271CB8E3D800A468B1 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				2FFE78FA1CB80AE400D85AB8 /* Main.storyboard */,
 				2FFE78FF1CB80AE400D85AB8 /* LaunchScreen.storyboard */,
 				2FFE79021CB80AE400D85AB8 /* Info.plist */,
+				2F0B93B71CB97DA6009F1EDF /* StationPickerViewController.swift */,
 			);
 			path = sthlmmetro;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				2F36E8161CB8DE8100A468B1 /* MetroDrawing.swift in Sources */,
 				2FFE78F71CB80AE400D85AB8 /* AppDelegate.swift in Sources */,
 				2F36E81C1CB8DF3100A468B1 /* RouteTableViewController.swift in Sources */,
+				2F0B93B81CB97DA6009F1EDF /* StationPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

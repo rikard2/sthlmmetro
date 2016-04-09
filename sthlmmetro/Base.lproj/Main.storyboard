@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2f7-wc-T5r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3U1-P9-sDx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -41,6 +41,71 @@
             </objects>
             <point key="canvasLocation" x="363.5" y="518.5"/>
         </scene>
+        <!--Station Picker View Controller-->
+        <scene sceneID="Go7-7D-sfD">
+            <objects>
+                <viewController id="s7j-ac-3Zt" customClass="StationPickerViewController" customModule="sthlmmetro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fVN-SA-kKJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qpc-lq-AKQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bsq-05-sxN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Z1b-9M-0PU">
+                                <rect key="frame" x="20" y="74" width="320" height="216"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="clY-NJ-WVh">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="s7j-ac-3Zt" id="uX8-5o-U0H"/>
+                                            <outlet property="delegate" destination="s7j-ac-3Zt" id="fZN-IU-AbV"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                            </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZp-GY-9y9">
+                                <rect key="frame" x="0.0" y="287" width="375" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Från" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsN-VI-dRp">
+                                <rect key="frame" x="20" y="40" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Till" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiM-nG-05L">
+                                <rect key="frame" x="15" y="310" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JeG-Jy-deu">
+                                <rect key="frame" x="27" y="344" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="s7j-ac-3Zt" id="CeG-9i-n3V"/>
+                                    <outlet property="delegate" destination="s7j-ac-3Zt" id="4gg-Ok-aDN"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="oZp-GY-9y9"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nsi-Mw-6r9"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="fromPicker" destination="clY-NJ-WVh" id="s53-Hf-faq"/>
+                        <outlet property="toPicker" destination="JeG-Jy-deu" id="6NP-6H-lDV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bwQ-SV-NMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1801.5" y="933.5"/>
+        </scene>
         <!--Route Table View Controller-->
         <scene sceneID="Ryh-B7-XFC">
             <objects>
@@ -78,7 +143,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecn-1C-u8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1677.5" y="511.5"/>
+            <point key="canvasLocation" x="1789.5" y="1682.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Rt-MP-QHv">
@@ -102,7 +167,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXM-pd-Y75" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="865" y="511"/>
+            <point key="canvasLocation" x="1348.5" y="1682.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UVp-fj-BMh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3U1-P9-sDx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r0Q-md-7TE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="s7j-ac-3Zt" kind="relationship" relationship="rootViewController" id="N3e-iY-P5R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pzh-VY-Doy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1348.5" y="933.5"/>
         </scene>
     </scenes>
 </document>
