@@ -16,6 +16,16 @@ class MyRoutesTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "selection" {
+            let selectedRoute = sender as! MyRoute
+            let view: RouteTableViewController = segue.destinationViewController as! RouteTableViewController
+            
+            view.myRoute = selectedRoute
+        }
+    }
+    
     override func viewWillAppear(animated: Bool) {
         self.myRoutes = MyRoutesStore.getMyRoutes()
     }
@@ -42,5 +52,11 @@ class MyRoutesTableViewController: UITableViewController {
         text.text = String(format: "%@ → %@", from, to)
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let route = self.myRoutes[indexPath.row]
+        
+        self.performSegueWithIdentifier("selection", sender: route)
     }
 }

@@ -20,6 +20,8 @@ class MyRoutesStore {
             let myRoute: MyRoute = MyRoute()
             myRoute.fromStation = r.valueForKey("fromStation") as! String
             myRoute.toStation = r.valueForKey("toStation") as! String
+            myRoute.fromStationId = r.valueForKey("fromStationId") as! Int
+            myRoute.toStationId = r.valueForKey("toStationId") as! Int
             
             arr.addObject(myRoute)
         }

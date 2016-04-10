@@ -42,6 +42,9 @@ class RouteTableViewCell: UITableViewCell {
         self.frame.origin.x = 15
         self.frame.size.width = self.bounds.size.width - 30
         
+        let dateFormat = NSDateFormatter()
+        dateFormat.dateFormat = "HH:mm"
+        
         var i = 0
         for route in routes {
             let fromStation = route.fromStation
@@ -54,7 +57,10 @@ class RouteTableViewCell: UITableViewCell {
             md.drawStopCircle(color, column: 1, row: CGFloat(i) * 6 + 5)
             
             md.drawLineText(fromStation, column: 1, row: CGFloat(i) * 6 + 1)
-            md.drawLineText("Två minuter (13:37)", column: 18, row: CGFloat(i) * 6 + 1)
+            let fromTime = dateFormat.stringFromDate(route.fromDate)
+            let toTime = dateFormat.stringFromDate(route.toDate)
+            md.drawLineText(fromTime, column: 18, row: CGFloat(i) * 6 + 1)
+            md.drawLineText(toTime, column: 18, row: CGFloat(i) * 6 + 5)
             md.drawLineText(toStation, column: 1, row: CGFloat(i) * 6 + 5)
             
             i = i + 1

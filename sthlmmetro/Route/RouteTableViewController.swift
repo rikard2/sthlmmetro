@@ -13,21 +13,30 @@ import PromiseKit
 class RouteTableViewController: UITableViewController {
 
     var routes: Array<Array<Route>> = [[]]
+    var fromStation: Station = Station(name: "from")
+    var toStation: Station = Station(name: "to")
+    var myRoute: MyRoute = MyRoute()
     
-    override func viewDidLoad() {
-        self.tableView.separatorColor = UIColor.clearColor()
+    override func viewDidLoad() {        self.tableView.separatorColor = UIColor.clearColor()
         self.tableView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
         self.tableView.separatorInset = UIEdgeInsetsMake(50, 0, 50, 0)
         
-        self.title = "Blåsut → Kungsträdgården"
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        RouteStore.GetRoutes().then { routes in
+        
+        RouteStore.GetRoutes(self.myRoute).then { routes in
             self.refreshRoutes(routes)
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.title = String(format: "%@ → %@", self.myRoute.fromStation, self.myRoute.toStation)
+        self.tableView.reloadData()
+        
+    }
+    
     func refreshRoutes(r: Array<Array<Route>>) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        
         self.routes = r
         self.tableView.reloadData()
     }

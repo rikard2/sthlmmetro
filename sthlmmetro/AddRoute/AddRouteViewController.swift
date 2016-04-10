@@ -56,7 +56,9 @@ class AddRouteViewController: UIViewController {
         let toRow = toPicker.selectedRowInComponent(0)
         
         myRoute.fromStation = self.stations[fromRow].name
+        myRoute.fromStationId = self.stations[fromRow].id
         myRoute.toStation = self.stations[toRow].name
+        myRoute.toStationId = self.stations[toRow].id
         
         MyRoutesStore.addRoute(myRoute)
     }

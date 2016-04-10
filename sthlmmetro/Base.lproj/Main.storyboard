@@ -82,7 +82,7 @@
             <objects>
                 <tableViewController id="R4e-Qe-IWN" customClass="RouteTableViewController" customModule="sthlmmetro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="o0h-pZ-Xtj">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -149,9 +149,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="R4e-Qe-IWN" kind="show" id="Y6z-Yq-j6r"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -167,6 +164,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="R4e-Qe-IWN" kind="show" identifier="selection" id="z5b-ab-pZi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5u-I6-C2R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -214,6 +214,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="zG1-7x-XuD"/>
         <segue reference="lS1-TB-JFD"/>
-        <segue reference="kSy-83-DjI"/>
+        <segue reference="z5b-ab-pZi"/>
     </inferredMetricsTieBreakers>
 </document>

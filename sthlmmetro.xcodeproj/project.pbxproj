@@ -110,9 +110,9 @@
 		2FC4768E1CB9AA3000E0BDE0 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				2F36E8251CB8E38900A468B1 /* Drawing */,
 				2FC4768F1CB9AA4900E0BDE0 /* Views */,
 				2FC476861CB9A45700E0BDE0 /* Stores */,
-				2F36E8251CB8E38900A468B1 /* Drawing */,
 			);
 			name = App;
 			sourceTree = "<group>";

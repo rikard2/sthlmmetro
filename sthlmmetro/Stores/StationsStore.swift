@@ -10,28 +10,38 @@ import Foundation
 import PromiseKit
 
 class StationsStore {
+    static func error() {
+        
+    }
     static func GetStations() -> Promise<Array<Station>> {
-        return fetchUserFeed().then({ body -> Array<Station> in
-            let arr = NSMutableArray()
+        return fetchStations().then({ body -> Array<Station> in
+            do {
+                let arr = NSMutableArray()
+                
+                let json = try NSJSONSerialization.JSONObjectWithData(body, options: NSJSONReadingOptions.MutableContainers) as! NSArray
+                
+                for j in json {
+                    let name = j["name"] as! String
+                    let id = j["id"] as! NSInteger
+                    print("j", j)
+                    
+                    let station = Station(name: name)
+                    station.id = id
+                    
+                    arr.addObject(station)
+                }
+                
+                return NSArray(array: arr) as! Array<Station>
+            } catch {
+                // Something went wrong
+            }
             
-            arr.addObject(Station(name: "Blåsut"))
-            arr.addObject(Station(name: "Skärmarbrink"))
-            arr.addObject(Station(name: "Gullmarsplan"))
-            arr.addObject(Station(name: "Skanstull"))
-            arr.addObject(Station(name: "Medborgarplatsen"))
-            arr.addObject(Station(name: "Slussen"))
-            arr.addObject(Station(name: "Gamla Stan"))
-            arr.addObject(Station(name: "T-centralen"))
-            arr.addObject(Station(name: "Hötorget"))
-            arr.addObject(Station(name: "Rådmansgatan"))
-            arr.addObject(Station(name: "Odenplan"))
-            
-            return NSArray(array: arr) as! Array<Station>
+            return NSArray() as! Array<Station>
         })
     }
     
-    static func fetchUserFeed() -> URLDataPromise {
-        let req =  NSURLRequest(URL: NSURL(string: "http://www.google.se/")!)
+    static func fetchStations() -> URLDataPromise {
+        let req =  NSURLRequest(URL: NSURL(string: "http://sthlmmetro.azurewebsites.net/api/stations")!)
     
         return NSURLConnection.promise(req)
     }
