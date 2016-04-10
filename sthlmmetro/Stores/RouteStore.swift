@@ -28,6 +28,8 @@ class RouteStore {
             routes2.addObject(Route(from: "Blåsut", to: "Odenplan", line: "green"))
             arr.addObject(routes2)
             
+            NSThread.sleepForTimeInterval(0.5)
+            
             return NSArray(array: arr) as! Array<Array<Route>>
         })
     }

@@ -20,13 +20,14 @@ class RouteTableViewController: UITableViewController {
         self.tableView.separatorInset = UIEdgeInsetsMake(50, 0, 50, 0)
         
         self.title = "Blåsut → Kungsträdgården"
-        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         RouteStore.GetRoutes().then { routes in
             self.refreshRoutes(routes)
         }
     }
     
     func refreshRoutes(r: Array<Array<Route>>) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         self.routes = r
         self.tableView.reloadData()
     }
