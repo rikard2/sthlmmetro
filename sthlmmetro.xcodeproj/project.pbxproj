@@ -14,6 +14,8 @@
 		2F36E8281CB8E3D800A468B1 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36E8271CB8E3D800A468B1 /* RouteTableViewCell.swift */; };
 		2FC476851CB99CE800E0BDE0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2FC476841CB99CE800E0BDE0 /* Settings.bundle */; };
 		2FC4768A1CB9A49300E0BDE0 /* MyRoutesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC476891CB9A49300E0BDE0 /* MyRoutesStore.swift */; };
+		2FC476931CB9BC9900E0BDE0 /* StationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC476921CB9BC9900E0BDE0 /* StationsStore.swift */; };
+		2FC476951CB9D98E00E0BDE0 /* RouteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC476941CB9D98E00E0BDE0 /* RouteStore.swift */; };
 		2FFE78F71CB80AE400D85AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */; };
 		2FFE78FC1CB80AE400D85AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE78FA1CB80AE400D85AB8 /* Main.storyboard */; };
 		2FFE79011CB80AE400D85AB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE78FF1CB80AE400D85AB8 /* LaunchScreen.storyboard */; };
@@ -28,6 +30,8 @@
 		2F36E8271CB8E3D800A468B1 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
 		2FC476841CB99CE800E0BDE0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		2FC476891CB9A49300E0BDE0 /* MyRoutesStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRoutesStore.swift; sourceTree = "<group>"; };
+		2FC476921CB9BC9900E0BDE0 /* StationsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsStore.swift; sourceTree = "<group>"; };
+		2FC476941CB9D98E00E0BDE0 /* RouteStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteStore.swift; sourceTree = "<group>"; };
 		2FFE78F31CB80AE400D85AB8 /* sthlmmetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sthlmmetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FFE78FB1CB80AE400D85AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				2FC476891CB9A49300E0BDE0 /* MyRoutesStore.swift */,
+				2FC476921CB9BC9900E0BDE0 /* StationsStore.swift */,
+				2FC476941CB9D98E00E0BDE0 /* RouteStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -290,9 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FC476931CB9BC9900E0BDE0 /* StationsStore.swift in Sources */,
 				2F0B93BA1CB99253009F1EDF /* MyRoutesTableViewController.swift in Sources */,
 				2FC4768A1CB9A49300E0BDE0 /* MyRoutesStore.swift in Sources */,
 				2F36E8281CB8E3D800A468B1 /* RouteTableViewCell.swift in Sources */,
+				2FC476951CB9D98E00E0BDE0 /* RouteStore.swift in Sources */,
 				2F36E8161CB8DE8100A468B1 /* MetroDrawing.swift in Sources */,
 				2FFE78F71CB80AE400D85AB8 /* AppDelegate.swift in Sources */,
 				2F36E81C1CB8DF3100A468B1 /* RouteTableViewController.swift in Sources */,

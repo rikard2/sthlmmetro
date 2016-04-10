@@ -21,7 +21,6 @@ class MyRoutesStore {
             myRoute.fromStation = r.valueForKey("fromStation") as! String
             myRoute.toStation = r.valueForKey("toStation") as! String
             
-             
             arr.addObject(myRoute)
         }
         return NSArray(array: arr) as! Array<MyRoute>

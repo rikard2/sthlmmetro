@@ -7,65 +7,59 @@
 //
 
 import UIKit
-import SwiftyJSON
+import PromiseKit
 
 class AddRouteViewController: UIViewController {
 
     @IBOutlet weak var fromPicker: UIPickerView!
     @IBOutlet weak var toPicker: UIPickerView!
     
-    var stations = [
-        ["name": "Blåsut"],
-        ["name": "Odenplan"],
-        ["name": "Blåsut"],
-        ["name": "Odenplan"],
-        ["name": "Blåsut"],
-        ["name": "Odenplan"],
-        ["name": "Blåsut"],
-        ["name": "Odenplan"],
-        ["name": "Blåsut"],
-        ["name": "Odenplan"],
-        ["name": "Blåsut"],
-        ["name": "Odenplan"],
-        ["name": "Blåsut"],
-        ["name": "Odenplan"],
-        ["name": "Blåsut"],
-        ["name": "Odenplan"],
-        ["name": "Blåsut"],
-        ["name": "Odenplan"]
-    ]
-    var stationsJson: JSON = []
+    var stations: Array<Station> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fromPicker.dataSource = self
         toPicker.dataSource = self
         
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        let p = StationsStore.GetStations()
+        
+        p.then { stations in
+            self.reload(stations)
+        }
+        
+        let activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+        activityView.center = self.view.center
+        activityView.startAnimating()
+        self.view.addSubview(activityView)
+        
         self.title = "Välj station"
+    }
+    
+    func reload(stations: Array<Station>) {
+        self.stations = stations;
         
-        stationsJson = JSON(stations)
-        
+        self.fromPicker.reloadAllComponents();
+        self.toPicker.reloadAllComponents();
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let myRoute = MyRoute()
-        myRoute.fromStation = "Blåsut"
-        myRoute.toStation = "Karlberg"
+        
+        let fromRow = fromPicker.selectedRowInComponent(0)
+        let toRow = toPicker.selectedRowInComponent(0)
+        
+        myRoute.fromStation = self.stations[fromRow].name
+        myRoute.toStation = self.stations[toRow].name
         
         MyRoutesStore.addRoute(myRoute)
     }
-    
-    override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
-        
-    }
-    
-
 }
 
 extension AddRouteViewController : UIPickerViewDataSource {
@@ -74,11 +68,11 @@ extension AddRouteViewController : UIPickerViewDataSource {
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return stationsJson.count
+        return stations.count
     }
     
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let title = stationsJson[row]["name"].stringValue
+        let title = stations[row].name
         
         return NSAttributedString(string: title)
     }
@@ -86,7 +80,4 @@ extension AddRouteViewController : UIPickerViewDataSource {
 }
 
 extension AddRouteViewController : UIPickerViewDelegate {
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return stationsJson[row]["name"].stringValue
-    }
 }

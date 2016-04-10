@@ -11,10 +11,11 @@ import SwiftyJSON
 
 class RouteTableViewCell: UITableViewCell {
 
-    var routesJson: JSON = []
+    var routes: Array<Route> = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    
         self.preservesSuperviewLayoutMargins = true
     }
 
@@ -23,7 +24,9 @@ class RouteTableViewCell: UITableViewCell {
     }
     
     func getHeight() -> CGFloat {
-        return CGFloat(routesJson.count) * 70 + 10
+        let x = self.routes.count
+        
+        return CGFloat(x) * 70                                                                                    
     }
     
     override func layoutMarginsDidChange() {
@@ -38,16 +41,13 @@ class RouteTableViewCell: UITableViewCell {
         let md: MetroDrawing = MetroDrawing(withContext: context)
         self.frame.origin.x = 15
         self.frame.size.width = self.bounds.size.width - 30
-        //CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor) // vit bakgrund
-       // CGContextFillRect(context, self.bounds)
         
-        for (index, route): (String, JSON) in routesJson {
-            let i = NSInteger(index)!
+        var i = 0
+        for route in routes {
+            let fromStation = route.fromStation
+            let toStation = route.toStation
             
-            let fromStation = route["from"].stringValue
-            let toStation = route["to"].stringValue
-            
-            let color = MetroDrawing.lineColorFromString(route["line"].stringValue)
+            let color = MetroDrawing.lineColorFromString(route.line)
             
             md.drawConnectingLine(1, fromRow: CGFloat(i) * 6 + 1, toColumn: 1, toRow: CGFloat(i) * 6 + 5)
             md.drawStopCircle(color, column: 1, row: CGFloat(i) * 6 + 1)
@@ -56,6 +56,8 @@ class RouteTableViewCell: UITableViewCell {
             md.drawLineText(fromStation, column: 1, row: CGFloat(i) * 6 + 1)
             md.drawLineText("Två minuter (13:37)", column: 18, row: CGFloat(i) * 6 + 1)
             md.drawLineText(toStation, column: 1, row: CGFloat(i) * 6 + 5)
+            
+            i = i + 1
         }
     }
 }

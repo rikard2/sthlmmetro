@@ -17,8 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Till" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiM-nG-05L">
+                                <rect key="frame" x="15" y="310" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JeG-Jy-deu">
+                                <rect key="frame" x="27" y="271" width="320" height="396"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="s7j-ac-3Zt" id="CeG-9i-n3V"/>
+                                    <outlet property="delegate" destination="s7j-ac-3Zt" id="4gg-Ok-aDN"/>
+                                </connections>
+                            </pickerView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Z1b-9M-0PU">
-                                <rect key="frame" x="20" y="74" width="320" height="216"/>
+                                <rect key="frame" x="20" y="99" width="320" height="216"/>
                                 <subviews>
                                     <pickerView tag="1" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="clY-NJ-WVh">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
@@ -33,24 +46,11 @@
                                 <rect key="frame" x="0.0" y="287" width="375" height="216"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Från" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsN-VI-dRp">
-                                <rect key="frame" x="20" y="40" width="42" height="21"/>
+                                <rect key="frame" x="20" y="65" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Till" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiM-nG-05L">
-                                <rect key="frame" x="15" y="310" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JeG-Jy-deu">
-                                <rect key="frame" x="27" y="271" width="320" height="396"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="s7j-ac-3Zt" id="CeG-9i-n3V"/>
-                                    <outlet property="delegate" destination="s7j-ac-3Zt" id="4gg-Ok-aDN"/>
-                                </connections>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">

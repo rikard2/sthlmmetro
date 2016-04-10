@@ -5,6 +5,7 @@
 
 target 'sthlmmetro' do
 	pod 'SwiftyJSON', '~> 2.3'
+	pod 'PromiseKit', '~> 3.1'
 	use_frameworks!
 end
 

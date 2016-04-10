@@ -8,67 +8,34 @@
 
 import UIKit
 import SwiftyJSON
+import PromiseKit
 
 class RouteTableViewController: UITableViewController {
 
-    var routesContents = [
-        [
-            [
-                "from": "Blåsut",
-                "to": "Medis",
-                "line": "green"
-            ],
-            [
-                "from": "Medis2",
-                "to": "Hornstull",
-                "line": "red"
-            ]
-        ],
-        [
-            [
-                "from": "Blåsut",
-                "to": "Medis",
-                "line": "green"
-            ],
-            [
-                "from": "Medis2",
-                "to": "Hornstull",
-                "line": "red"
-            ],
-            [
-                "from": "Hornstull",
-                "to": "Kungsträdgården",
-                "line": "blue"
-            ]
-        ],
-        [
-            [
-                "from": "Blåsut",
-                "to": "Medis",
-                "line": "green"
-            ],
-            [
-                "from": "Medis3",
-                "to": "Hornstull",
-                "line": "red"
-            ]
-        ]
-    ]
-    
-    var routesJson: JSON = []
+    var routes: Array<Array<Route>> = [[]]
     
     override func viewDidLoad() {
-        routesJson = JSON(routesContents)
-        
         self.tableView.separatorColor = UIColor.clearColor()
         self.tableView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
         self.tableView.separatorInset = UIEdgeInsetsMake(50, 0, 50, 0)
+        
         self.title = "Blåsut → Kungsträdgården"
+        
+        RouteStore.GetRoutes().then { routes in
+            self.refreshRoutes(routes)
+        }
+    }
+    
+    func refreshRoutes(r: Array<Array<Route>>) {
+        print("routes", r)
+    
+        self.routes = r
+        self.tableView.reloadData()
     }
 
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return routesJson.count
+        return routes.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,7 +59,9 @@ class RouteTableViewController: UITableViewController {
         routeCell.indentationLevel = 2
         
         //routeCell.contentView.frame.size.width -= 30
-        routeCell.routesJson = self.routesJson[indexPath.section]
+        routeCell.routes = self.routes[indexPath.section]
+        
+        print(routeCell.routes)
         //routeCell.frame.size.width = 50
         let layer = routeCell.layer
         layer.cornerRadius = 4
@@ -118,7 +87,7 @@ class RouteTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         let routeCell: RouteTableViewCell = RouteTableViewCell()
-        routeCell.routesJson = self.routesJson[indexPath.section]
+        routeCell.routes = self.routes[indexPath.section]
         
 
         return routeCell.getHeight()
