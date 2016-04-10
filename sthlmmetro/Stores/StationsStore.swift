@@ -23,7 +23,6 @@ class StationsStore {
                 for j in json {
                     let name = j["name"] as! String
                     let id = j["id"] as! NSInteger
-                    print("j", j)
                     
                     let station = Station(name: name)
                     station.id = id

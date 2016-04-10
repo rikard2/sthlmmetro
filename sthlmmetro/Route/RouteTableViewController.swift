@@ -84,6 +84,8 @@ class RouteTableViewController: UITableViewController {
         routeCell.bounds.origin.x = -10
         routeCell.bounds.origin.y = -10
         
+        routeCell.selectionStyle = UITableViewCellSelectionStyle.None
+        
         return routeCell
     }
     

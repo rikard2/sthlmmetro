@@ -12,6 +12,7 @@ import SwiftyJSON
 class MyRoutesStore {
     static func getMyRoutes() -> Array<MyRoute> {
         let defaults = NSUserDefaults(suiteName: "metro")
+        // defaults?.setObject(NSMutableArray(), forKey: "MyRoutesArray")
         
         let routes = defaults?.mutableArrayValueForKey("MyRoutesArray");
         let arr = NSMutableArray()
