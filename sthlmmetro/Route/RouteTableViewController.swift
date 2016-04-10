@@ -90,10 +90,8 @@ class RouteTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
         let routeCell: RouteTableViewCell = RouteTableViewCell()
         routeCell.routes = self.routes[indexPath.section]
-        
 
         return routeCell.getHeight()
     }

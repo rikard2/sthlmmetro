@@ -29,9 +29,6 @@ class RouteTableViewCell: UITableViewCell {
         return CGFloat(x) * 70                                                                                    
     }
     
-    override func layoutMarginsDidChange() {
-    }
-    
     /*
         Draw the lines.
     */
