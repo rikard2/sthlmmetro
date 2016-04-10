@@ -27,8 +27,6 @@ class RouteTableViewController: UITableViewController {
     }
     
     func refreshRoutes(r: Array<Array<Route>>) {
-        print("routes", r)
-    
         self.routes = r
         self.tableView.reloadData()
     }
@@ -58,15 +56,10 @@ class RouteTableViewController: UITableViewController {
         let routeCell: RouteTableViewCell = RouteTableViewCell()
         routeCell.indentationLevel = 2
         
-        //routeCell.contentView.frame.size.width -= 30
         routeCell.routes = self.routes[indexPath.section]
         
-        print(routeCell.routes)
-        //routeCell.frame.size.width = 50
         let layer = routeCell.layer
         layer.cornerRadius = 4
-        ////layer.borderColor = UIColor.lightGrayColor().CGColor
-        //layer.borderWidth = 1.5
         
         layer.shadowColor = UIColor.blackColor().CGColor
         layer.shadowOpacity = 0.5
