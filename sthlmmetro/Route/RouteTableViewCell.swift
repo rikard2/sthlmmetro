@@ -56,8 +56,8 @@ class RouteTableViewCell: UITableViewCell {
             md.drawLineText(fromStation, column: 1, row: CGFloat(i) * rows_height + 1)
             let fromTime = dateFormat.stringFromDate(route.fromDate)
             let toTime = dateFormat.stringFromDate(route.toDate)
-            md.drawLineText(fromTime, column:28, row: CGFloat(i) * rows_height + 1)
-            md.drawLineText(toTime, column: 28, row: CGFloat(i) * rows_height + 5)
+            md.drawLineText(fromTime, column:27, row: CGFloat(i) * rows_height + 1)
+            md.drawLineText(toTime, column: 27, row: CGFloat(i) * rows_height + 5)
             md.drawLineText(toStation, column: 1, row: CGFloat(i) * rows_height + 5)
             height = CGFloat(i) * rows_height + 5
             i = i + 1

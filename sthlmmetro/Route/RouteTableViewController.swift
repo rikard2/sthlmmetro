@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import PromiseKit
+import PullToRefresh
 
 class RouteTableViewController: UITableViewController {
 
@@ -19,13 +20,26 @@ class RouteTableViewController: UITableViewController {
     
     override func viewDidLoad() {        self.tableView.separatorColor = UIColor.clearColor()
         self.tableView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
-        self.tableView.separatorInset = UIEdgeInsetsMake(50, 0, 50, 0)
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        let refreshener = PullToRefresh()
+        
+        self.navigationController?.navigationBar.translucent = false
+        
+        tableView.addPullToRefresh(refreshener, action: {
+            RouteStore.GetRoutes(self.myRoute).then { routes in
+                self.refreshRoutes(routes)
+            }
+        });
         
         RouteStore.GetRoutes(self.myRoute).then { routes in
             self.refreshRoutes(routes)
         }
+    }
+    
+    func startRefreshingRoutes() {
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -39,6 +53,7 @@ class RouteTableViewController: UITableViewController {
         
         self.routes = r
         self.tableView.reloadData()
+         self.tableView.endRefreshing()
     }
 
 
@@ -47,6 +62,10 @@ class RouteTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (routes.count == 0) {
+            return 0
+        }
+        
         return 1
     }
     

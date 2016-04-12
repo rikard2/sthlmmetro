@@ -6,6 +6,7 @@
 target 'sthlmmetro' do
 	pod 'SwiftyJSON', '~> 2.3'
 	pod 'PromiseKit', '~> 3.1'
+	pod 'PullToRefresher', '~> 1.3'
 	use_frameworks!
 end
 

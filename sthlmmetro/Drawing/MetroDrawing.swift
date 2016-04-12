@@ -11,9 +11,9 @@ import UIKit
 import LatoFont
 
 class MetroDrawing {
-    static var greenLineColor: UIColor = MetroDrawing.colorFromRgb(102, g: 153, b: 51)
-    static var blueLineColor: UIColor = MetroDrawing.colorFromRgb(0, g: 153, b: 153)
-    static var redLineColor: UIColor = MetroDrawing.colorFromRgb(255, g: 51, b: 102)
+    static var greenLineColor: UIColor = MetroDrawing.colorFromRgb(17, g: 182, b: 15)
+    static var blueLineColor: UIColor = MetroDrawing.colorFromRgb(27, g: 127, b: 247)
+    static var redLineColor: UIColor = MetroDrawing.colorFromRgb(252, g: 17, b: 35)
     static var connectingLineColor: UIColor = MetroDrawing.colorFromRgb(230, g: 230, b: 230)
     static var lineTextColor: UIColor = MetroDrawing.colorFromRgb(0, g: 0, b: 0)
     
@@ -40,15 +40,15 @@ class MetroDrawing {
     
     func drawLineText(s: NSString, column: CGFloat, row: CGFloat) {
         
-        let f = UIFont(name: "HelveticaNeue", size: 18)!
+        let f = UIFont(name: "Avenir-Medium", size: 18)!
         
         let textAttributes: [String: AnyObject] = [
             NSForegroundColorAttributeName : MetroDrawing.lineTextColor,
             NSFontAttributeName : f
         ]
         
-        let x = column * width + 20
-        let y = row * width - 5
+        let x = column * width + 27
+        let y = row * width - 7
         
         let rect: CGRect = CGRectMake(x, y, 250, 25)
         
