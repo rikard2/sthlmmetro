@@ -26,7 +26,7 @@ class RouteTableViewCell: UITableViewCell {
     func getHeight() -> CGFloat {
         let x = self.routes.count
         
-        return CGFloat(x) * 70                                                                                    
+        return CGFloat(x) * 60 + 30;
     }
     
     /*
@@ -41,25 +41,25 @@ class RouteTableViewCell: UITableViewCell {
         
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = "HH:mm"
-        
+        var height: CGFloat = 0
         var i = 0
         for route in routes {
             let fromStation = route.fromStation
             let toStation = route.toStation
+            let rows_height: CGFloat = 6
             
             let color = MetroDrawing.lineColorFromString(route.line)
+            md.drawConnectingLine(1, fromRow: CGFloat(i) * rows_height + 1, toColumn: 1, toRow: CGFloat(i) * rows_height + 5)
+            md.drawStopCircle(color, column: 1, row: CGFloat(i) * rows_height + 1)
+            md.drawStopCircle(color, column: 1, row: CGFloat(i) * rows_height + 5)
             
-            md.drawConnectingLine(1, fromRow: CGFloat(i) * 6 + 1, toColumn: 1, toRow: CGFloat(i) * 6 + 5)
-            md.drawStopCircle(color, column: 1, row: CGFloat(i) * 6 + 1)
-            md.drawStopCircle(color, column: 1, row: CGFloat(i) * 6 + 5)
-            
-            md.drawLineText(fromStation, column: 1, row: CGFloat(i) * 6 + 1)
+            md.drawLineText(fromStation, column: 1, row: CGFloat(i) * rows_height + 1)
             let fromTime = dateFormat.stringFromDate(route.fromDate)
             let toTime = dateFormat.stringFromDate(route.toDate)
-            md.drawLineText(fromTime, column: 18, row: CGFloat(i) * 6 + 1)
-            md.drawLineText(toTime, column: 18, row: CGFloat(i) * 6 + 5)
-            md.drawLineText(toStation, column: 1, row: CGFloat(i) * 6 + 5)
-            
+            md.drawLineText(fromTime, column:28, row: CGFloat(i) * rows_height + 1)
+            md.drawLineText(toTime, column: 28, row: CGFloat(i) * rows_height + 5)
+            md.drawLineText(toStation, column: 1, row: CGFloat(i) * rows_height + 5)
+            height = CGFloat(i) * rows_height + 5
             i = i + 1
         }
     }

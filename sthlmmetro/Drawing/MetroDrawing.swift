@@ -40,7 +40,8 @@ class MetroDrawing {
     
     func drawLineText(s: NSString, column: CGFloat, row: CGFloat) {
         
-        let f = UIFont(name: "HelveticaNeue", size: 17)!
+        let f = UIFont(name: "HelveticaNeue", size: 18)!
+        
         let textAttributes: [String: AnyObject] = [
             NSForegroundColorAttributeName : MetroDrawing.lineTextColor,
             NSFontAttributeName : f
