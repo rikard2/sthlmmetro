@@ -18,43 +18,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Till" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiM-nG-05L">
-                                <rect key="frame" x="15" y="310" width="42" height="21"/>
+                                <rect key="frame" x="15" y="298" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JeG-Jy-deu">
-                                <rect key="frame" x="27" y="271" width="320" height="396"/>
+                                <rect key="frame" x="27" y="278" width="320" height="369"/>
                                 <connections>
                                     <outlet property="dataSource" destination="s7j-ac-3Zt" id="CeG-9i-n3V"/>
                                     <outlet property="delegate" destination="s7j-ac-3Zt" id="4gg-Ok-aDN"/>
                                 </connections>
                             </pickerView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Z1b-9M-0PU">
-                                <rect key="frame" x="20" y="99" width="320" height="216"/>
-                                <subviews>
-                                    <pickerView tag="1" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="clY-NJ-WVh">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="s7j-ac-3Zt" id="uX8-5o-U0H"/>
-                                            <outlet property="delegate" destination="s7j-ac-3Zt" id="fZN-IU-AbV"/>
-                                        </connections>
-                                    </pickerView>
-                                </subviews>
-                            </stackView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZp-GY-9y9">
-                                <rect key="frame" x="0.0" y="287" width="375" height="216"/>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Från" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsN-VI-dRp">
-                                <rect key="frame" x="20" y="65" width="42" height="21"/>
+                                <rect key="frame" x="15" y="9" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="clY-NJ-WVh">
+                                <rect key="frame" x="27" y="9" width="320" height="282"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="s7j-ac-3Zt" id="uX8-5o-U0H"/>
+                                    <outlet property="delegate" destination="s7j-ac-3Zt" id="fZN-IU-AbV"/>
+                                </connections>
+                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Z1b-9M-0PU">
+                                <rect key="frame" x="20" y="99" width="320" height="216"/>
+                            </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZp-GY-9y9">
+                                <rect key="frame" x="0.0" y="287" width="375" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="Z1b-9M-0PU"/>
                                 <exclude reference="oZp-GY-9y9"/>
                             </mask>
                         </variation>
@@ -134,7 +133,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stationCell" id="d8v-iv-uwm">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d8v-iv-uwm" id="hKi-ce-J5Z">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -212,7 +211,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="kSy-83-DjI"/>
-        <segue reference="zG1-7x-XuD"/>
+        <segue reference="N3e-iY-P5R"/>
         <segue reference="lS1-TB-JFD"/>
     </inferredMetricsTieBreakers>
 </document>
