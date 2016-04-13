@@ -14,9 +14,15 @@ class StationsStore {
         
     }
     static func GetStations() -> Promise<Array<Station>> {
+        
         return fetchStations().then({ body -> Array<Station> in
             do {
                 let arr = NSMutableArray()
+                
+                let nearestStation = Station(name: "Närmsta station")
+                nearestStation.id = -1
+                arr.addObject(nearestStation)
+                
                 
                 let json = try NSJSONSerialization.JSONObjectWithData(body, options: NSJSONReadingOptions.MutableContainers) as! NSArray
                 
@@ -29,6 +35,7 @@ class StationsStore {
                     
                     arr.addObject(station)
                 }
+                
                 
                 return NSArray(array: arr) as! Array<Station>
             } catch {

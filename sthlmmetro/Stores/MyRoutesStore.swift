@@ -12,7 +12,7 @@ import SwiftyJSON
 class MyRoutesStore {
     static func getMyRoutes() -> Array<MyRoute> {
         let defaults = NSUserDefaults(suiteName: "metro")
-        // defaults?.setObject(NSMutableArray(), forKey: "MyRoutesArray")
+         //defaults?.setObject(NSMutableArray(), forKey: "MyRoutesArray")
         
         let routes = defaults?.mutableArrayValueForKey("MyRoutesArray");
         let arr = NSMutableArray()
@@ -27,6 +27,17 @@ class MyRoutesStore {
             arr.addObject(myRoute)
         }
         return NSArray(array: arr) as! Array<MyRoute>
+    }
+    
+    static func deleteRoute(index: Int) {
+        print("deleting", index)
+        let defaults = NSUserDefaults(suiteName: "metro")
+        let arr = defaults?.arrayForKey("MyRoutesArray")
+        let routes: NSMutableArray? = NSMutableArray(array: arr!)
+        print("routes", routes)
+        
+        routes?.removeObjectAtIndex(index)
+        defaults!.setObject(routes, forKey: "MyRoutesArray")
     }
     
     static func addRoute(myRoute: MyRoute) {
