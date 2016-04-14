@@ -60,6 +60,8 @@ class MyRoute {
     var toStation: String = ""
     var fromStationId: Int = 0
     var toStationId: Int = 0
+    var fromLat: String = ""
+    var fromLong: String = ""
     
     func serialize() -> AnyObject {
         return [

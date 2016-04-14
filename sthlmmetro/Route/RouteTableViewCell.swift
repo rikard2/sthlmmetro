@@ -12,6 +12,7 @@ import SwiftyJSON
 class RouteTableViewCell: UITableViewCell {
 
     var routes: Array<Route> = []
+    var errorMessage: String? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,10 @@ class RouteTableViewCell: UITableViewCell {
     }
     
     func getHeight() -> CGFloat {
+        if self.errorMessage != nil {
+            return 80
+        }
+        
         let x = self.routes.count
         
         if (x == 2) {
@@ -42,6 +47,12 @@ class RouteTableViewCell: UITableViewCell {
         let md: MetroDrawing = MetroDrawing(withContext: context)
         self.frame.origin.x = 15
         self.frame.size.width = self.bounds.size.width - 30
+        
+        if errorMessage != nil {
+            md.drawLineText(self.errorMessage!, column:1, row: 2)
+            
+            return
+        }
         
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = "HH:mm"

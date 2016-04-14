@@ -9,13 +9,31 @@
 import Foundation
 import PromiseKit
 
+enum RouteError: ErrorType {
+    case STATIONS_TOO_CLOSE
+    case NO_INTERNET
+    case UNKNOWN
+}
+
 class RouteStore {
     static func GetRoutes(myRoute: MyRoute) -> Promise<Array<Array<Route>>> {
+        print("getMyRoutes", String(format: "%@ -> %@", myRoute.fromLat, myRoute.fromLong))
+        
         return fetchRoutes(myRoute).then({ body -> Array<Array<Route>> in
             do {
                 let arr = NSMutableArray()
                 
-                let json = try NSJSONSerialization.JSONObjectWithData(body, options: NSJSONReadingOptions.MutableContainers) as! NSArray
+                let jsonObj = try NSJSONSerialization.JSONObjectWithData(body, options: NSJSONReadingOptions.MutableContainers)
+                
+                if jsonObj is NSDictionary {
+                    let err = (jsonObj as! NSDictionary).objectForKey("errorMessage")
+                    
+                    if err != nil {
+                        throw RouteError.STATIONS_TOO_CLOSE
+                    }
+                }
+                
+                let json = jsonObj as! NSArray
                 
                 for j in json {
                     let routes = NSMutableArray()
@@ -43,18 +61,20 @@ class RouteStore {
                 }
                 
                 return NSArray(array: arr) as! Array<Array<Route>>
+            } catch RouteError.STATIONS_TOO_CLOSE {
+                throw RouteError.STATIONS_TOO_CLOSE
             } catch {
-                // Something went wrong
+                throw RouteError.UNKNOWN
             }
             
             return NSArray() as! Array<Array<Route>>
-        })
+        });
     }
     
     static func fetchRoutes(myRoute: MyRoute) -> URLDataPromise {
-        let url = String(format: "http://sthlmmetro.azurewebsites.net/api/route?fromStationId=%d&toStationId=%d", myRoute.fromStationId, myRoute.toStationId)
-        print("fetching routes", url)
-        let req =  NSURLRequest(URL: NSURL(string: url)!)
+        let url = String(format: "http://sthlmmetro.azurewebsites.net/api/route?fromStationId=%d&toStationId=%d&fromLat=%@&fromLong=%@", myRoute.fromStationId, myRoute.toStationId, myRoute.fromLat, myRoute.fromLong)
+        
+            let req =  NSURLRequest(URL: NSURL(string: url)!)
         
         return NSURLConnection.promise(req)
     }
