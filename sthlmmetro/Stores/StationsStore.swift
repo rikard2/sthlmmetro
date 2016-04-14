@@ -18,24 +18,19 @@ class StationsStore {
         return fetchStations().then({ body -> Array<Station> in
             do {
                 let arr = NSMutableArray()
+                let json = try NSJSONSerialization.JSONObjectWithData(body, options: NSJSONReadingOptions.MutableContainers) as? NSMutableArray
                 
-                let nearestStation = Station(name: "Närmsta station")
-                nearestStation.id = -1
-                arr.addObject(nearestStation)
-                
-                
-                let json = try NSJSONSerialization.JSONObjectWithData(body, options: NSJSONReadingOptions.MutableContainers) as! NSArray
-                
-                for j in json {
+                for j in json! {
                     let name = j["name"] as! String
+                    //let line = j["line"] as! String
                     let id = j["id"] as! NSInteger
                     
                     let station = Station(name: name)
                     station.id = id
+                    //station.line = line
                     
                     arr.addObject(station)
                 }
-                
                 
                 return NSArray(array: arr) as! Array<Station>
             } catch {
@@ -47,7 +42,10 @@ class StationsStore {
     }
     
     static func fetchStations() -> URLDataPromise {
-        let req =  NSURLRequest(URL: NSURL(string: "http://sthlmmetro.azurewebsites.net/api/stations")!)
+        
+        var url = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("stations", ofType:"json")!)
+
+        let req =  NSURLRequest(URL: url) //NSURL(string: "http://sthlmmetro.azurewebsites.net/api/stations")!)
     
         return NSURLConnection.promise(req)
     }
@@ -55,6 +53,7 @@ class StationsStore {
 
 class Station {
     var name: String = ""
+    var line: String = ""
     var id: Int = 0
     
     init(name: String) {

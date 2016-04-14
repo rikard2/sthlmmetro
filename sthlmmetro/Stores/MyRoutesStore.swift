@@ -56,10 +56,10 @@ class MyRoutesStore {
 }
 
 class MyRoute {
-    var fromStation: String = ""
-    var toStation: String = ""
-    var fromStationId: Int = 0
-    var toStationId: Int = 0
+    var fromStation: String = "Ingen vald"
+    var toStation: String = "Ingen vald"
+    var fromStationId: Int = -2
+    var toStationId: Int = -2
     var fromLat: String = ""
     var fromLong: String = ""
     

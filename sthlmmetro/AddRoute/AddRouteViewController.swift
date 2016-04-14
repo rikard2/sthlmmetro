@@ -19,6 +19,7 @@ class AddRouteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.translucent = false
         
         fromPicker.dataSource = self
         toPicker.dataSource = self
