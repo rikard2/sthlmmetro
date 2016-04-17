@@ -26,8 +26,6 @@ class RouteTableViewController: UITableViewController {
     override func viewDidLoad() {        self.tableView.separatorColor = UIColor.clearColor()
         self.tableView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
         let refreshener = PullToRefresh()
         
         self.navigationController?.navigationBar.translucent = false
@@ -47,31 +45,46 @@ class RouteTableViewController: UITableViewController {
             self.pullRefresh()
         });
         
-        RouteStore.GetRoutes(self.myRoute).then { routes in
-            self.refreshRoutes(routes)
-        }.error { error in
-            if (error is RouteError) {
-                if error as! RouteError == RouteError.STATIONS_TOO_CLOSE {
-                    self.errorMessage = "För nära slutstationen."
-                } else if error as! RouteError == RouteError.NO_INTERNET {
-                    self.errorMessage = "Ingen internetuppkoppling."
-                } else if error as! RouteError == RouteError.UNKNOWN {
-                    self.errorMessage = "Okänt fel."
-                }
-            } else {
-                self.errorMessage = "Ingen internetuppkoppling."
-            }
-            
-            self.isError = true
-            
-            self.tableView.reloadData()
-        }
+        self.refresh()
         
         _ = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "updateTimer", userInfo: nil, repeats: true)
     }
     
+    func refresh() {
+        self.requestLocation()
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        RouteStore.GetRoutes(self.myRoute).then { routes in
+            self.refreshRoutes(routes)
+            }.error { error in
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                
+                if (error is RouteError) {
+                    print("ERROR!", error)
+                    if error as! RouteError == RouteError.NO_GPS {
+                        self.errorMessage = "Ingen gps-signal."
+                    } else if error as! RouteError == RouteError.STATIONS_TOO_CLOSE {
+                        self.errorMessage = "För nära slutstationen."
+                    } else if error as! RouteError == RouteError.NO_INTERNET {
+                        self.errorMessage = "Ingen internetuppkoppling."
+                    } else if error as! RouteError == RouteError.UNKNOWN {
+                        self.errorMessage = "Okänt fel."
+                    }
+                } else {
+                    self.errorMessage = "Ingen internetuppkoppling."
+                }
+                
+                self.isError = true
+                
+                self.tableView.reloadData()
+                self.tableView.endRefreshing()
+        }
+    }
+    
     func updateTimer() {
         self.tableView.reloadData()
+        
         for (var i = 0; i < self.routes.count; i = i + 1) {
             let ip = NSIndexPath(forRow: i, inSection: 0)
             
@@ -84,11 +97,8 @@ class RouteTableViewController: UITableViewController {
     }
     
     func pullRefresh() {
-        requestLocation()
-        
-        RouteStore.GetRoutes(self.myRoute).then { routes in
-            self.refreshRoutes(routes)
-        }
+        self.tableView.startRefreshing()
+        self.refresh()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -115,7 +125,7 @@ class RouteTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isError {
+        if isError == true {
             return 1
         }
         

@@ -120,7 +120,7 @@
             </objects>
             <point key="canvasLocation" x="2254.5" y="933.5"/>
         </scene>
-        <!--Mina rutter-->
+        <!--Mina resor-->
         <scene sceneID="nnS-am-TYQ">
             <objects>
                 <tableViewController id="gWx-Ll-9il" customClass="MyRoutesTableViewController" customModule="Sthlm_Metro" customModuleProvider="target" sceneMemberID="viewController">
@@ -151,7 +151,7 @@
                             <outlet property="delegate" destination="gWx-Ll-9il" id="NWR-qa-OHV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Mina rutter" id="Tuf-5H-5lK">
+                    <navigationItem key="navigationItem" title="Mina resor" id="Tuf-5H-5lK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jsE-q6-Tmv">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -325,8 +325,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kbd-jH-1j8"/>
+        <segue reference="z5b-ab-pZi"/>
         <segue reference="wgJ-0x-iNd"/>
-        <segue reference="kSy-83-DjI"/>
+        <segue reference="kbd-jH-1j8"/>
     </inferredMetricsTieBreakers>
 </document>

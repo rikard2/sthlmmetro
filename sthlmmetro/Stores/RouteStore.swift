@@ -11,6 +11,7 @@ import PromiseKit
 
 enum RouteError: ErrorType {
     case STATIONS_TOO_CLOSE
+    case NO_GPS
     case NO_INTERNET
     case UNKNOWN
 }
@@ -29,7 +30,14 @@ class RouteStore {
                     let err = (jsonObj as! NSDictionary).objectForKey("errorMessage")
                     
                     if err != nil {
-                        throw RouteError.STATIONS_TOO_CLOSE
+                        print("error", err)
+                        if err as! String == "Ingen gps-position." {
+                            print("NO GPS")
+                            throw RouteError.NO_GPS
+                        } else {
+                            print("RouteError.STATIONS_TOO_CLOSE" )
+                            throw RouteError.STATIONS_TOO_CLOSE
+                        }
                     }
                 }
                 
@@ -69,6 +77,8 @@ class RouteStore {
                 }
                 
                 return NSArray(array: arr) as! Array<Array<Route>>
+            } catch RouteError.NO_GPS {
+                throw RouteError.NO_GPS
             } catch RouteError.STATIONS_TOO_CLOSE {
                 throw RouteError.STATIONS_TOO_CLOSE
             } catch {
