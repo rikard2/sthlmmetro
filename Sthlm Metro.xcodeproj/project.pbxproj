@@ -24,6 +24,7 @@
 		2FFD9CE21CC3769B007E7A63 /* stockholm-old-town_2566_600x450.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2FFD9CE11CC3769B007E7A63 /* stockholm-old-town_2566_600x450.jpg */; };
 		2FFD9CE61CC37732007E7A63 /* metro_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FFD9CE51CC37732007E7A63 /* metro_small.png */; };
 		2FFD9CF01CC38E6E007E7A63 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FFD9CEF1CC38E6E007E7A63 /* Image.xcassets */; };
+		2FFD9CF41CC3D9E7007E7A63 /* launchscreen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FFD9CF31CC3D9E7007E7A63 /* launchscreen2.png */; };
 		2FFE78F71CB80AE400D85AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */; };
 		2FFE78FC1CB80AE400D85AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE78FA1CB80AE400D85AB8 /* Main.storyboard */; };
 		2FFE79011CB80AE400D85AB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE78FF1CB80AE400D85AB8 /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 		2FFD9CE11CC3769B007E7A63 /* stockholm-old-town_2566_600x450.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "stockholm-old-town_2566_600x450.jpg"; sourceTree = "<group>"; };
 		2FFD9CE51CC37732007E7A63 /* metro_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metro_small.png; sourceTree = "<group>"; };
 		2FFD9CEF1CC38E6E007E7A63 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		2FFD9CF31CC3D9E7007E7A63 /* launchscreen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchscreen2.png; sourceTree = "<group>"; };
 		2FFE78F31CB80AE400D85AB8 /* Sthlm Metro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sthlm Metro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FFE78FB1CB80AE400D85AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		2FC4768E1CB9AA3000E0BDE0 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				2FFD9CF31CC3D9E7007E7A63 /* launchscreen2.png */,
 				2FFD9CE51CC37732007E7A63 /* metro_small.png */,
 				2FFD9CE11CC3769B007E7A63 /* stockholm-old-town_2566_600x450.jpg */,
 				2F4991931CC36356000509D0 /* stockholm.jpg */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FFD9CE61CC37732007E7A63 /* metro_small.png in Resources */,
+				2FFD9CF41CC3D9E7007E7A63 /* launchscreen2.png in Resources */,
 				2FFE79011CB80AE400D85AB8 /* LaunchScreen.storyboard in Resources */,
 				2FFD9CE21CC3769B007E7A63 /* stockholm-old-town_2566_600x450.jpg in Resources */,
 				2FC476851CB99CE800E0BDE0 /* Settings.bundle in Resources */,

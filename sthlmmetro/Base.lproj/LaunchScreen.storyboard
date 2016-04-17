@@ -17,25 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Launch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hf-MP-5FO">
-                                <rect key="frame" x="134" y="308" width="107" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="metro_small.png" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jQ2-av-MJe">
-                                <rect key="frame" x="-193" y="-167" width="700" height="972"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro.png" translatesAutoresizingMaskIntoConstraints="NO" id="ivS-Mz-Ivi">
-                                <rect key="frame" x="-85" y="0.0" width="1185" height="730"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launchscreen2.png" translatesAutoresizingMaskIntoConstraints="NO" id="lvv-JE-2gT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="ivS-Mz-Ivi"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -45,7 +31,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="metro.png" width="2148" height="2982"/>
-        <image name="metro_small.png" width="700" height="972"/>
+        <image name="launchscreen2.png" width="375" height="667"/>
     </resources>
 </document>
