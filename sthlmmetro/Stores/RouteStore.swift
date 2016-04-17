@@ -47,6 +47,7 @@ class RouteStore {
                         dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
                         route.fromStation = r["fromStation"] as! String
                         route.toStation = r["toStation"] as! String
+
                         let fromDateString = r["fromDate"] as! String
                         let toDateString = r["toDate"] as! String
                         
@@ -79,8 +80,10 @@ class RouteStore {
     }
     
     static func fetchRoutes(myRoute: MyRoute) -> URLDataPromise {
-        let url = String(format: "http://sthlmmetro.azurewebsites.net/api/route?fromStationId=%d&toStationId=%d&fromLat=%@&fromLong=%@", myRoute.fromStationId, myRoute.toStationId, myRoute.fromLat, myRoute.fromLong)
+        var url = String(format: "http://sthlmmetro.azurewebsites.net/api/route?fromStationId=%@&toStationId=%@&fromLat=%@&fromLong=%@", myRoute.fromStation, myRoute.toStation, myRoute.fromLat, myRoute.fromLong)
         
+        url = url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        print(url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
             let req =  NSURLRequest(URL: NSURL(string: url)!)
         
         return NSURLConnection.promise(req)
