@@ -25,7 +25,6 @@ class MyRoutesTableViewController: UITableViewController {
         self.navigationItem.backBarButtonItem = button
     }
     
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "selection" {
             let selectedRoute = sender as! MyRoute

@@ -64,6 +64,8 @@ class RouteTableViewController: UITableViewController {
                     print("ERROR!", error)
                     if error as! RouteError == RouteError.NO_GPS {
                         self.errorMessage = "Ingen gps-signal."
+                    } else if error as! RouteError == RouteError.STATIONS_TOO_FAR {
+                        self.errorMessage = "Ingen station i närheten."
                     } else if error as! RouteError == RouteError.STATIONS_TOO_CLOSE {
                         self.errorMessage = "För nära slutstationen."
                     } else if error as! RouteError == RouteError.NO_INTERNET {

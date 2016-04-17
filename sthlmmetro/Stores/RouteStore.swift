@@ -11,6 +11,7 @@ import PromiseKit
 
 enum RouteError: ErrorType {
     case STATIONS_TOO_CLOSE
+    case STATIONS_TOO_FAR
     case NO_GPS
     case NO_INTERNET
     case UNKNOWN
@@ -34,6 +35,8 @@ class RouteStore {
                         if err as! String == "Ingen gps-position." {
                             print("NO GPS")
                             throw RouteError.NO_GPS
+                        } else if err as! String == "Det finns ingen hållplats i närheten av den angivna adressen." {
+                            throw RouteError.STATIONS_TOO_FAR
                         } else {
                             print("RouteError.STATIONS_TOO_CLOSE" )
                             throw RouteError.STATIONS_TOO_CLOSE
@@ -55,6 +58,8 @@ class RouteStore {
                         dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
                         route.fromStation = r["fromStation"] as! String
                         route.toStation = r["toStation"] as! String
+                        route.lineNumber = r["lineNumber"] as! String
+
 
                         let fromDateString = r["fromDate"] as! String
                         let toDateString = r["toDate"] as! String
@@ -79,6 +84,8 @@ class RouteStore {
                 return NSArray(array: arr) as! Array<Array<Route>>
             } catch RouteError.NO_GPS {
                 throw RouteError.NO_GPS
+            } catch RouteError.STATIONS_TOO_FAR {
+                throw RouteError.STATIONS_TOO_FAR
             } catch RouteError.STATIONS_TOO_CLOSE {
                 throw RouteError.STATIONS_TOO_CLOSE
             } catch {
@@ -104,6 +111,7 @@ class Route {
     var fromStation: String = ""
     var toStation: String = ""
     var line: String = ""
+    var lineNumber: String = ""
     var fromDate: NSDate = NSDate()
     var toDate: NSDate = NSDate()
     

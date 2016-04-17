@@ -49,6 +49,7 @@ class RouteTableViewCell: UITableViewCell {
         let context: CGContextRef = UIGraphicsGetCurrentContext()!
         
         let md: MetroDrawing = MetroDrawing(withContext: context)
+        md.cellWidth = self.frame.size.width
         self.frame.origin.x = 15
         self.frame.size.width = self.bounds.size.width - 30
         
@@ -106,7 +107,7 @@ class RouteTableViewCell: UITableViewCell {
             
             md.drawLineText(fromTime, column:27, row: CGFloat(i) * rows_height + 1)
             md.drawLineText(toTime, column: 27, row: CGFloat(i) * rows_height + 5)
-            md.drawLineText(toStation, column: 1, row: CGFloat(i) * rows_height + 5)
+            md.drawLineText(String(format: "%@ (%@)", toStation, route.lineNumber), column: 1, row: CGFloat(i) * rows_height + 5)
             
             i = i + 1
         }
@@ -126,7 +127,7 @@ extension NSDate {
         let days = "\(difference.day)d" + " " + hours
         
         if difference.day    > 0 { return days }
-        if difference.hour   > 0 { return hours }
+        //if difference.hour   > 0 { return hours }
         if difference.minute > 0 { return minutes }
         if difference.second > 0 { return seconds }
         return ""

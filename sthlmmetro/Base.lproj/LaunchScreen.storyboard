@@ -14,16 +14,22 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launchscreen2.png" translatesAutoresizingMaskIntoConstraints="NO" id="lvv-JE-2gT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launchscreen2.png" translatesAutoresizingMaskIntoConstraints="NO" id="lvv-JE-2gT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lvv-JE-2gT" secondAttribute="trailing" id="BZx-dd-3og"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="lvv-JE-2gT" secondAttribute="bottom" id="FhB-gg-yNw"/>
+                            <constraint firstItem="lvv-JE-2gT" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="LVl-9m-rh0"/>
+                            <constraint firstItem="lvv-JE-2gT" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="sKl-IE-xOZ"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,6 +18,7 @@ class MetroDrawing {
     
     var context: CGContextRef
     var width: CGFloat = 10.0
+    var cellWidth: CGFloat = 200;
     
     init(withContext: CGContextRef) {
         self.context = withContext
@@ -46,11 +47,21 @@ class MetroDrawing {
             NSFontAttributeName : f
         ]
         
-        let x = column * width + 27
+        var x = column * width + 27
+        var textWidth: CGFloat = 250
         let y = row * width - 7
         
-        let rect: CGRect = CGRectMake(x, y, 250, 25)
+        if column == 27 {
+            x = self.cellWidth - 75
+            textWidth = 75
+        }
         
+        if column == 20 {
+            x = self.cellWidth - 150
+            textWidth = 75
+        }
+        
+        let rect: CGRect = CGRectMake(x, y, textWidth, 25)
         
         s.drawInRect(rect, withAttributes: textAttributes)
     }
