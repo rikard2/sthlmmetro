@@ -38,7 +38,7 @@ class StationsTableViewController: UITableViewController {
         let dest = segue.destinationViewController as! AddRouteTableViewController
         
         if self.tableView.indexPathForSelectedRow!.section == 0 && self.didSelectFrom {
-            self.station = Station(name: "Närmsta station")
+            self.station = Station(name: "Närmaste station")
             self.station.id = -1
         } else {
             self.station = self.stations[self.tableView.indexPathForSelectedRow!.row]
@@ -94,7 +94,7 @@ class StationsTableViewController: UITableViewController {
         let stationLabel = cell.viewWithTag(1) as! UILabel
         
         if indexPath.row == 0 && indexPath.section == 0 && self.didSelectFrom {
-            stationLabel.text = "Närmsta station"
+            stationLabel.text = "Närmaste station"
         } else {
             let station = self.stations[indexPath.row]
             
