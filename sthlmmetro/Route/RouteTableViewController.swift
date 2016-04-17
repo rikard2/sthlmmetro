@@ -32,6 +32,15 @@ class RouteTableViewController: UITableViewController {
         
         self.navigationController?.navigationBar.translucent = false
         
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        
+        let button = UIBarButtonItem()
+        button.title = ""
+        
+        self.navigationItem.backBarButtonItem = button
+        
         requestLocation()
         
         tableView.addPullToRefresh(refreshener, action: {

@@ -14,11 +14,15 @@
 		2F36E8161CB8DE8100A468B1 /* MetroDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36E8151CB8DE8100A468B1 /* MetroDrawing.swift */; };
 		2F36E81C1CB8DF3100A468B1 /* RouteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36E81B1CB8DF3100A468B1 /* RouteTableViewController.swift */; };
 		2F36E8281CB8E3D800A468B1 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F36E8271CB8E3D800A468B1 /* RouteTableViewCell.swift */; };
+		2F4991941CC36356000509D0 /* stockholm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4991931CC36356000509D0 /* stockholm.jpg */; };
 		2F6525001CC0414C00907DAE /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F6524FF1CC0414C00907DAE /* stations.json */; };
 		2FC476851CB99CE800E0BDE0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2FC476841CB99CE800E0BDE0 /* Settings.bundle */; };
 		2FC4768A1CB9A49300E0BDE0 /* MyRoutesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC476891CB9A49300E0BDE0 /* MyRoutesStore.swift */; };
 		2FC476931CB9BC9900E0BDE0 /* StationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC476921CB9BC9900E0BDE0 /* StationsStore.swift */; };
 		2FC476951CB9D98E00E0BDE0 /* RouteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC476941CB9D98E00E0BDE0 /* RouteStore.swift */; };
+		2FFD9CE01CC36DF8007E7A63 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFD9CDF1CC36DF8007E7A63 /* CommonViewController.swift */; };
+		2FFD9CE21CC3769B007E7A63 /* stockholm-old-town_2566_600x450.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2FFD9CE11CC3769B007E7A63 /* stockholm-old-town_2566_600x450.jpg */; };
+		2FFD9CE61CC37732007E7A63 /* metro_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FFD9CE51CC37732007E7A63 /* metro_small.png */; };
 		2FFE78F71CB80AE400D85AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */; };
 		2FFE78FC1CB80AE400D85AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE78FA1CB80AE400D85AB8 /* Main.storyboard */; };
 		2FFE79011CB80AE400D85AB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE78FF1CB80AE400D85AB8 /* LaunchScreen.storyboard */; };
@@ -33,11 +37,15 @@
 		2F36E8151CB8DE8100A468B1 /* MetroDrawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroDrawing.swift; sourceTree = "<group>"; };
 		2F36E81B1CB8DF3100A468B1 /* RouteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewController.swift; sourceTree = "<group>"; };
 		2F36E8271CB8E3D800A468B1 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
+		2F4991931CC36356000509D0 /* stockholm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stockholm.jpg; sourceTree = "<group>"; };
 		2F6524FF1CC0414C00907DAE /* stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
 		2FC476841CB99CE800E0BDE0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		2FC476891CB9A49300E0BDE0 /* MyRoutesStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRoutesStore.swift; sourceTree = "<group>"; };
 		2FC476921CB9BC9900E0BDE0 /* StationsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsStore.swift; sourceTree = "<group>"; };
 		2FC476941CB9D98E00E0BDE0 /* RouteStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteStore.swift; sourceTree = "<group>"; };
+		2FFD9CDF1CC36DF8007E7A63 /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
+		2FFD9CE11CC3769B007E7A63 /* stockholm-old-town_2566_600x450.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "stockholm-old-town_2566_600x450.jpg"; sourceTree = "<group>"; };
+		2FFD9CE51CC37732007E7A63 /* metro_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metro_small.png; sourceTree = "<group>"; };
 		2FFE78F31CB80AE400D85AB8 /* sthlmmetro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sthlmmetro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FFE78F61CB80AE400D85AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FFE78FB1CB80AE400D85AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +126,9 @@
 		2FC4768E1CB9AA3000E0BDE0 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				2FFD9CE51CC37732007E7A63 /* metro_small.png */,
+				2FFD9CE11CC3769B007E7A63 /* stockholm-old-town_2566_600x450.jpg */,
+				2F4991931CC36356000509D0 /* stockholm.jpg */,
 				2F36E8251CB8E38900A468B1 /* Drawing */,
 				2FC4768F1CB9AA4900E0BDE0 /* Views */,
 				2FC476861CB9A45700E0BDE0 /* Stores */,
@@ -131,6 +142,7 @@
 				2FC4768C1CB9A89100E0BDE0 /* MyRoutes */,
 				2FC4768B1CB9A87F00E0BDE0 /* AddRoute */,
 				2F36E8261CB8E3A300A468B1 /* Route */,
+				2FFD9CDF1CC36DF8007E7A63 /* CommonViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -244,8 +256,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FFD9CE61CC37732007E7A63 /* metro_small.png in Resources */,
 				2FFE79011CB80AE400D85AB8 /* LaunchScreen.storyboard in Resources */,
+				2FFD9CE21CC3769B007E7A63 /* stockholm-old-town_2566_600x450.jpg in Resources */,
 				2FC476851CB99CE800E0BDE0 /* Settings.bundle in Resources */,
+				2F4991941CC36356000509D0 /* stockholm.jpg in Resources */,
 				2F6525001CC0414C00907DAE /* stations.json in Resources */,
 				2FFE78FC1CB80AE400D85AB8 /* Main.storyboard in Resources */,
 			);
@@ -315,6 +330,7 @@
 				2F025B491CC0186200E15F88 /* StationsTableViewController.swift in Sources */,
 				2F36E8161CB8DE8100A468B1 /* MetroDrawing.swift in Sources */,
 				2FFE78F71CB80AE400D85AB8 /* AppDelegate.swift in Sources */,
+				2FFD9CE01CC36DF8007E7A63 /* CommonViewController.swift in Sources */,
 				2F36E81C1CB8DF3100A468B1 /* RouteTableViewController.swift in Sources */,
 				2F0B93B81CB97DA6009F1EDF /* AddRouteViewController.swift in Sources */,
 			);

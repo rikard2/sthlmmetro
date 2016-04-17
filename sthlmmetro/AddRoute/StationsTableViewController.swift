@@ -26,6 +26,11 @@ class StationsTableViewController: UITableViewController {
             self.reloadStations(stations)
         }
         
+        let button = UIBarButtonItem()
+        button.title = ""
+        
+        self.navigationItem.backBarButtonItem = button
+        
         self.navigationItem.setRightBarButtonItem(nil, animated: false)
     }
     

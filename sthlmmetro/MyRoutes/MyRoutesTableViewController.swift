@@ -14,6 +14,15 @@ class MyRoutesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        
+        let button = UIBarButtonItem()
+        button.title = ""
+        
+        self.navigationItem.backBarButtonItem = button
     }
     
     
@@ -55,6 +64,8 @@ class MyRoutesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("stationCell", forIndexPath: indexPath)
+        cell.backgroundColor = UIColor.clearColor()
+        cell.backgroundView = UIView()
         let text: UILabel = cell.viewWithTag(1) as! UILabel
         let myRoute = self.myRoutes[indexPath.row]
         let from = myRoute.fromStation

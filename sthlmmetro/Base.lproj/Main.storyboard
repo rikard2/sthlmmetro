@@ -102,14 +102,15 @@
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="OQi-E6-1mk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OQi-E6-1mk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i6e-0y-xiA">
+                    <toolbar key="toolbar" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i6e-0y-xiA">
                         <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="0.54342672410000004" colorSpace="calibratedWhite"/>
                     </toolbar>
                     <connections>
                         <segue destination="R4e-Qe-IWN" kind="relationship" relationship="rootViewController" id="kSy-83-DjI"/>
@@ -128,8 +129,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="stationCell" id="d8v-iv-uwm">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" alpha="0.55000000000000004" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="stationCell" id="d8v-iv-uwm">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d8v-iv-uwm" id="hKi-ce-J5Z">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
@@ -152,6 +153,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Mina rutter" id="Tuf-5H-5lK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jsE-q6-Tmv">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="aYo-zu-YVx" kind="show" id="eCn-gt-cRX"/>
                             </connections>
@@ -167,20 +169,20 @@
             </objects>
             <point key="canvasLocation" x="1801.5" y="158.5"/>
         </scene>
-        <!--Add Route Table View Controller-->
+        <!--Välj station-->
         <scene sceneID="BNK-Bv-VCj">
             <objects>
                 <tableViewController id="aYo-zu-YVx" customClass="AddRouteTableViewController" customModule="sthlmmetro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Snn-jt-ryD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="stationCell" id="ZuY-YN-vIx">
-                                <rect key="frame" x="0.0" y="49.5" width="600" height="44"/>
+                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="stationCell" id="ZuY-YN-vIx">
+                                <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZuY-YN-vIx" id="yqz-SV-QGm">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7P-Gv-OHu">
@@ -197,6 +199,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="0.54342672413793103" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="WkH-bx-eA9" kind="show" id="S6G-KC-CHc"/>
                                 </connections>
@@ -207,8 +210,9 @@
                             <outlet property="delegate" destination="aYo-zu-YVx" id="Qkw-NG-9sP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="5c6-3S-anZ">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Lägg till" id="LHR-hp-pJR">
+                    <navigationItem key="navigationItem" title="Välj station" id="5c6-3S-anZ">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="LHR-hp-pJR">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="gWx-Ll-9il" kind="show" id="dGO-th-MAL"/>
                             </connections>
@@ -229,7 +233,7 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="stationCell" id="7rD-KA-JyA">
-                                <rect key="frame" x="0.0" y="49.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7rD-KA-JyA" id="wJj-xg-smY">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
@@ -286,7 +290,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kLv-p7-SXX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        
+                        <color key="tintColor" white="0.0" alpha="1.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.13244321369062773" blue="0.26440770348837206" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -318,7 +327,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="kbd-jH-1j8"/>
-        <segue reference="dGO-th-MAL"/>
-        <segue reference="z5b-ab-pZi"/>
+        <segue reference="wgJ-0x-iNd"/>
+        <segue reference="kSy-83-DjI"/>
     </inferredMetricsTieBreakers>
 </document>

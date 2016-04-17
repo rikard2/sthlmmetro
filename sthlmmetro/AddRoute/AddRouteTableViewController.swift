@@ -20,6 +20,11 @@ class AddRouteTableViewController: UITableViewController {
         if myRoute.fromStationId > -2 && myRoute.toStationId > -2 {
             self.navigationItem.rightBarButtonItem?.enabled = true
         }
+        
+        let button = UIBarButtonItem()
+        button.title = ""
+        
+        self.navigationItem.backBarButtonItem = button
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

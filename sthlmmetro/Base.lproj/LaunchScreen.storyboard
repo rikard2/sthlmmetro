@@ -23,8 +23,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="metro_small.png" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jQ2-av-MJe">
+                                <rect key="frame" x="-193" y="-167" width="700" height="972"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro.png" translatesAutoresizingMaskIntoConstraints="NO" id="ivS-Mz-Ivi">
+                                <rect key="frame" x="-85" y="0.0" width="1185" height="730"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ivS-Mz-Ivi"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -33,4 +44,8 @@
             <point key="canvasLocation" x="52.5" y="374.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="metro.png" width="2148" height="2982"/>
+        <image name="metro_small.png" width="700" height="972"/>
+    </resources>
 </document>
