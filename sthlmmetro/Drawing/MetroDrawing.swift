@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import LatoFont
 
 class MetroDrawing {
     static var greenLineColor: UIColor = MetroDrawing.colorFromRgb(17, g: 182, b: 15)
@@ -38,12 +37,12 @@ class MetroDrawing {
         return redLineColor
     }
     
-    func drawLineText(s: NSString, column: CGFloat, row: CGFloat) {
+    func drawLineText(s: NSString, column: CGFloat, row: CGFloat, color: UIColor) {
         
         let f = UIFont(name: "Avenir-Medium", size: 18)!
         
         let textAttributes: [String: AnyObject] = [
-            NSForegroundColorAttributeName : MetroDrawing.lineTextColor,
+            NSForegroundColorAttributeName : color,
             NSFontAttributeName : f
         ]
         
@@ -54,6 +53,10 @@ class MetroDrawing {
         
         
         s.drawInRect(rect, withAttributes: textAttributes)
+    }
+    
+    func drawLineText(s: NSString, column: CGFloat, row: CGFloat) {
+        self.drawLineText(s, column: column, row: row, color: MetroDrawing.lineTextColor)
     }
     
     func drawStopCircle(color: UIColor, column: CGFloat, row: CGFloat) -> Void {

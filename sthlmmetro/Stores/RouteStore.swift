@@ -38,6 +38,7 @@ class RouteStore {
                 for j in json {
                     let routes = NSMutableArray()
                     let routesArr = j as! NSArray
+                    var tooEarly: Bool = false
                     
                     for r in routesArr {
                         let route = Route(from: "", to: "", line: "")
@@ -54,10 +55,16 @@ class RouteStore {
                         
                         route.line = r["line"] as! String
                         
+                        if route.fromDate.offsetFromMinutes(NSDate()) < 0 {
+                            tooEarly = true
+                        }
+                        
                         routes.addObject(route)
                     }
                     
-                    arr.addObject(NSArray(array: routes) as! Array<Route>)
+                    if !tooEarly {
+                        arr.addObject(NSArray(array: routes) as! Array<Route>)
+                    }
                 }
                 
                 return NSArray(array: arr) as! Array<Array<Route>>

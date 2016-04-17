@@ -8,7 +8,7 @@
         <!--Add Route View Controller-->
         <scene sceneID="Go7-7D-sfD">
             <objects>
-                <viewController id="s7j-ac-3Zt" customClass="AddRouteViewController" customModule="sthlmmetro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="s7j-ac-3Zt" customClass="AddRouteViewController" customModule="Sthlm_Metro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fVN-SA-kKJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Qpc-lq-AKQ"/>
@@ -75,7 +75,7 @@
         <!--Route Table View Controller-->
         <scene sceneID="Ryh-B7-XFC">
             <objects>
-                <tableViewController id="R4e-Qe-IWN" customClass="RouteTableViewController" customModule="sthlmmetro" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="R4e-Qe-IWN" customClass="RouteTableViewController" customModule="Sthlm_Metro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="o0h-pZ-Xtj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,7 +123,7 @@
         <!--Mina rutter-->
         <scene sceneID="nnS-am-TYQ">
             <objects>
-                <tableViewController id="gWx-Ll-9il" customClass="MyRoutesTableViewController" customModule="sthlmmetro" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="gWx-Ll-9il" customClass="MyRoutesTableViewController" customModule="Sthlm_Metro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q6p-xz-E5U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +172,7 @@
         <!--Välj station-->
         <scene sceneID="BNK-Bv-VCj">
             <objects>
-                <tableViewController id="aYo-zu-YVx" customClass="AddRouteTableViewController" customModule="sthlmmetro" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="aYo-zu-YVx" customClass="AddRouteTableViewController" customModule="Sthlm_Metro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Snn-jt-ryD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,7 +226,7 @@
         <!--Stations Table View Controller-->
         <scene sceneID="eNA-Xk-usU">
             <objects>
-                <tableViewController id="WkH-bx-eA9" customClass="StationsTableViewController" customModule="sthlmmetro" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="WkH-bx-eA9" customClass="StationsTableViewController" customModule="Sthlm_Metro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="adb-zo-Zcb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

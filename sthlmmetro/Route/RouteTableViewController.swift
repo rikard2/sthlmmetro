@@ -66,6 +66,21 @@ class RouteTableViewController: UITableViewController {
             
             self.tableView.reloadData()
         }
+        
+        _ = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "updateTimer", userInfo: nil, repeats: true)
+    }
+    
+    func updateTimer() {
+        self.tableView.reloadData()
+        for (var i = 0; i < self.routes.count; i = i + 1) {
+            let ip = NSIndexPath(forRow: i, inSection: 0)
+            
+            let cell: RouteTableViewCell? = self.tableView.cellForRowAtIndexPath(ip) as? RouteTableViewCell
+            
+            if cell != nil {
+               // cell!.setNeedsDisplay()
+            }
+        }
     }
     
     func pullRefresh() {
