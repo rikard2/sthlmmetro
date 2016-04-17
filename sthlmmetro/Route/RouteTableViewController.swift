@@ -47,7 +47,7 @@ class RouteTableViewController: UITableViewController {
         
         self.refresh()
         
-        _ = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "updateTimer", userInfo: nil, repeats: true)
+        _ = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(RouteTableViewController.updateTimer), userInfo: nil, repeats: true)
     }
     
     func refresh() {

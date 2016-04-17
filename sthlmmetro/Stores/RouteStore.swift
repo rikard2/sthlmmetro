@@ -91,8 +91,6 @@ class RouteStore {
             } catch {
                 throw RouteError.UNKNOWN
             }
-            
-            return NSArray() as! Array<Array<Route>>
         });
     }
     
