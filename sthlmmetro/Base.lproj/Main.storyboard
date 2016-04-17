@@ -290,9 +290,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kLv-p7-SXX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        
-                        <color key="tintColor" white="0.0" alpha="1.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.0" green="0.13244321369062773" blue="0.26440770348837206" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.45098039215686275" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>

@@ -4,17 +4,17 @@
 <dict>
 	<key>MyRoutesArray</key>
 	<array>
-        <dict>
-            <key>Name</key>
-            <string>Blåsut</string>
-            <key>StationId</key>
-            <integer>0</integer>
-        </dict>
-    </array>
+		<dict>
+			<key>Name</key>
+			<string>Blåsut</string>
+			<key>StationId</key>
+			<integer>0</integer>
+		</dict>
+	</array>
 	<key>Title</key>
 	<string></string>
 	<key>Name</key>
-	<string></string>
+	<string>Sthlm Metro</string>
 	<key>StringsTable</key>
 	<string>Root</string>
 	<key>PreferenceSpecifiers</key>

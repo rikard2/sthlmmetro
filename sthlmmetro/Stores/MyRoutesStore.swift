@@ -42,8 +42,15 @@ class MyRoutesStore {
     
     static func addRoute(myRoute: MyRoute) {
         let defaults = NSUserDefaults(suiteName: "metro")
-        let arr = defaults?.arrayForKey("MyRoutesArray");
-        let routes: NSMutableArray? = NSMutableArray(array: arr!)
+        var arr = defaults?.arrayForKey("MyRoutesArray");
+        
+        var routes: NSMutableArray?
+        
+        if (arr == nil) {
+            routes = NSMutableArray()
+        } else {
+            routes = NSMutableArray(array: arr!)
+        }
         
         let dict = myRoute.serialize()
         
