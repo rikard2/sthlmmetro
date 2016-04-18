@@ -203,9 +203,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2FFE78F21CB80AE400D85AB8 /* Sthlm Metro */ = {
+		2FFE78F21CB80AE400D85AB8 /* Tuben */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2FFE79051CB80AE400D85AB8 /* Build configuration list for PBXNativeTarget "Sthlm Metro" */;
+			buildConfigurationList = 2FFE79051CB80AE400D85AB8 /* Build configuration list for PBXNativeTarget "Tuben" */;
 			buildPhases = (
 				26F5285988CC5F5E45E8F091 /* Check Pods Manifest.lock */,
 				2FFE78EF1CB80AE400D85AB8 /* Sources */,
@@ -218,7 +218,7 @@
 			);
 			dependencies = (
 			);
-			name = "Sthlm Metro";
+			name = Tuben;
 			productName = sthlmmetro;
 			productReference = 2FFE78F31CB80AE400D85AB8 /* Tuben.app */;
 			productType = "com.apple.product-type.application";
@@ -239,7 +239,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2FFE78EE1CB80AE400D85AB8 /* Build configuration list for PBXProject "Sthlm Metro" */;
+			buildConfigurationList = 2FFE78EE1CB80AE400D85AB8 /* Build configuration list for PBXProject "Tuben" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -252,7 +252,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2FFE78F21CB80AE400D85AB8 /* Sthlm Metro */,
+				2FFE78F21CB80AE400D85AB8 /* Tuben */,
 			);
 		};
 /* End PBXProject section */
@@ -458,7 +458,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = sthlmmetro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hashbrown.tuben;
+				PRODUCT_BUNDLE_IDENTIFIER = hashbrown.sthlmmetro;
 				PRODUCT_NAME = Tuben;
 				PROVISIONING_PROFILE = "";
 			};
@@ -473,7 +473,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = sthlmmetro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hashbrown.tuben;
+				PRODUCT_BUNDLE_IDENTIFIER = hashbrown.sthlmmetro;
 				PRODUCT_NAME = Tuben;
 				PROVISIONING_PROFILE = "";
 			};
@@ -482,7 +482,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2FFE78EE1CB80AE400D85AB8 /* Build configuration list for PBXProject "Sthlm Metro" */ = {
+		2FFE78EE1CB80AE400D85AB8 /* Build configuration list for PBXProject "Tuben" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FFE79031CB80AE400D85AB8 /* Debug */,
@@ -491,7 +491,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2FFE79051CB80AE400D85AB8 /* Build configuration list for PBXNativeTarget "Sthlm Metro" */ = {
+		2FFE79051CB80AE400D85AB8 /* Build configuration list for PBXNativeTarget "Tuben" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FFE79061CB80AE400D85AB8 /* Debug */,
