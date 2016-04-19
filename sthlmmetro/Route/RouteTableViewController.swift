@@ -20,8 +20,7 @@ class RouteTableViewController: UITableViewController {
     var myRoute: MyRoute = MyRoute()
     var locationManager = CLLocationManager()
     
-    var isError: Bool = false
-    var errorMessage: String = "qweqweeqw"
+    var errorMessage: String? = nil
     
     override func viewDidLoad() {        self.tableView.separatorColor = UIColor.clearColor()
         self.tableView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
@@ -33,6 +32,8 @@ class RouteTableViewController: UITableViewController {
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        
+        self.locationManager.delegate = self
         
         let button = UIBarButtonItem()
         button.title = ""
@@ -68,6 +69,8 @@ class RouteTableViewController: UITableViewController {
                         self.errorMessage = "Ingen station i närheten."
                     } else if error as! RouteError == RouteError.STATIONS_TOO_CLOSE {
                         self.errorMessage = "För nära slutstationen."
+                    } else if error as! RouteError == RouteError.NO_ROUTES_FOUND {
+                        self.errorMessage = "Ingen resa hittades."
                     } else if error as! RouteError == RouteError.NO_INTERNET {
                         self.errorMessage = "Ingen internetuppkoppling."
                     } else if error as! RouteError == RouteError.UNKNOWN {
@@ -76,8 +79,6 @@ class RouteTableViewController: UITableViewController {
                 } else {
                     self.errorMessage = "Ingen internetuppkoppling."
                 }
-                
-                self.isError = true
                 
                 self.tableView.reloadData()
                 self.tableView.endRefreshing()
@@ -99,6 +100,7 @@ class RouteTableViewController: UITableViewController {
     }
     
     func pullRefresh() {
+        self.errorMessage = nil
         self.tableView.startRefreshing()
         self.refresh()
     }
@@ -119,7 +121,7 @@ class RouteTableViewController: UITableViewController {
 
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if isError {
+        if self.errorMessage != nil {
             return 1
         }
         
@@ -127,7 +129,7 @@ class RouteTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isError == true {
+        if self.errorMessage != nil {
             return 1
         }
         
@@ -152,7 +154,7 @@ class RouteTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if isError {
+        if self.errorMessage != nil {
             let routeCell: RouteTableViewCell = RouteTableViewCell()
             routeCell.errorMessage = self.errorMessage
             
@@ -186,7 +188,7 @@ class RouteTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if isError {
+        if self.errorMessage != nil {
             return 50
         }
         
@@ -219,7 +221,6 @@ class RouteTableViewController: UITableViewController {
                 self.updateLocations(loc!)
             } else {
                 self.errorMessage = "Ingen platsservice."
-                self.isError = true
             }
         }
     }
@@ -239,6 +240,10 @@ class RouteTableViewController: UITableViewController {
 }
 
 extension RouteTableViewController : CLLocationManagerDelegate {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        print("didChangeAuthorizationStatus")
+        self.pullRefresh()
+    }
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //self.updateLocations(locations)
     }

@@ -127,7 +127,7 @@ extension NSDate {
         let days = "\(difference.day)d" + " " + hours
         
         if difference.day    > 0 { return days }
-        //if difference.hour   > 0 { return hours }
+        if difference.hour   > 0 { return "" }
         if difference.minute > 0 { return minutes }
         if difference.second > 0 { return seconds }
         return ""

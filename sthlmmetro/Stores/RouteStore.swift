@@ -12,6 +12,7 @@ import PromiseKit
 enum RouteError: ErrorType {
     case STATIONS_TOO_CLOSE
     case STATIONS_TOO_FAR
+    case NO_ROUTES_FOUND
     case NO_GPS
     case NO_INTERNET
     case UNKNOWN
@@ -37,6 +38,8 @@ class RouteStore {
                             throw RouteError.NO_GPS
                         } else if err as! String == "Det finns ingen hållplats i närheten av den angivna adressen." {
                             throw RouteError.STATIONS_TOO_FAR
+                        } else if err as! String == "Ingen resa hittades." {
+                            throw RouteError.NO_ROUTES_FOUND
                         } else {
                             print("RouteError.STATIONS_TOO_CLOSE" )
                             throw RouteError.STATIONS_TOO_CLOSE
@@ -88,6 +91,8 @@ class RouteStore {
                 throw RouteError.STATIONS_TOO_FAR
             } catch RouteError.STATIONS_TOO_CLOSE {
                 throw RouteError.STATIONS_TOO_CLOSE
+            } catch RouteError.NO_ROUTES_FOUND {
+                throw RouteError.NO_ROUTES_FOUND
             } catch {
                 throw RouteError.UNKNOWN
             }
