@@ -220,7 +220,7 @@ class RouteTableViewController: UITableViewController {
             if loc != nil {
                 self.updateLocations(loc!)
             } else {
-                self.errorMessage = "Ingen platsservice."
+                self.errorMessage = "Ingen position."
             }
         }
     }
